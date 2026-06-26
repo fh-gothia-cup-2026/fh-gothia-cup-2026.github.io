@@ -62,9 +62,9 @@ Mundu að `assets/`-mappan (FH-merkið) þarf alltaf að fylgja með.
 
 Leitaðu að `VANTAR` / `class="todo"` í skránni:
 
-1. **Þjálfarar** (kafli 1) — nöfn og símanúmer þjálfara 2–4 (aðeins „Arnar 841-9874“ er skráð).
-2. **Hegðunarsáttmáli** (kafli 9) — setja útivistartíma / hvenær skólinn lokar.
-3. **Úrslitakeppni** (kafli 3) — leikir fimmtud.–laugard. birtast þegar staða úr riðlum liggur fyrir.
+1. **Hegðunarsáttmáli** (kafli 9) — setja útivistartíma / hvenær skólinn lokar.
+2. **Úrslitakeppni** (kafli 3) — leikir fimmtud.–laugard. birtast þegar staða úr riðlum liggur fyrir.
+3. **Þjálfarar** (kafli 1) — fullt nafn á „Arnar“ ef óskað er (símanúmer er skráð).
 
 Riðlarnir í kafla 4 (Liðaskipan) eru sóttir af results.gothiacup.se. Hver riðill hefur
 „Lifandi staða“ tengil á opinberu mótssíðuna þar sem röð og úrslit uppfærast meðan á mótinu stendur.

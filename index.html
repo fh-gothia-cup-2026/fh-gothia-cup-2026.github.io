@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FH 4. flokkur karla · Gothia Cup 2026 — Ferðahandbók</title>
+<meta name="description" content="Ferðahandbók fyrir 4. flokk karla í FH á Gothia Cup 2026 í Gautaborg, 12.–19. júlí 2026.">
+<style>
+  :root{
+    --ink:#111418;
+    --ink-soft:#3a4048;
+    --muted:#6b7280;
+    --bg:#f4f5f7;
+    --card:#ffffff;
+    --line:#e6e8ec;
+    --accent:#000000;
+    --accent-contrast:#ffffff;
+    --gold:#c9a227;
+    --green:#2e7d32;
+    --amber:#e0a800;
+    --red:#c62828;
+    --radius:16px;
+    --shadow:0 1px 2px rgba(16,20,28,.04), 0 8px 24px rgba(16,20,28,.06);
+    --maxw:920px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji",sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit}
+  img{max-width:100%}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:radial-gradient(120% 120% at 50% -10%, #20262e 0%, #0a0c0f 70%);
+    color:#fff;
+    text-align:center;
+    padding:56px 20px 64px;
+  }
+  .hero__logo{
+    width:104px;height:104px;
+    background:#fff;border-radius:24px;
+    display:flex;align-items:center;justify-content:center;
+    margin:0 auto 22px;box-shadow:var(--shadow);
+    padding:14px;
+  }
+  .hero__logo img{width:100%;height:100%;object-fit:contain}
+  .hero__kicker{
+    text-transform:uppercase;letter-spacing:.28em;font-size:.72rem;
+    color:#b9c0c9;margin:0 0 10px;font-weight:600;
+  }
+  .hero h1{font-size:clamp(2rem,6vw,3.1rem);margin:0;font-weight:800;letter-spacing:-.02em}
+  .hero__sub{font-size:1.05rem;color:#d7dbe1;margin:8px 0 4px}
+  .hero__team{font-weight:700;font-size:1.15rem;margin:18px 0 0}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:26px 0 0}
+  .chip{
+    background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);
+    border-radius:999px;padding:8px 16px;font-size:.9rem;backdrop-filter:blur(4px);
+  }
+  .chip b{font-size:1.05rem}
+  .hero__actions{margin-top:28px}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    background:#fff;color:#0a0c0f;border:none;border-radius:999px;
+    padding:12px 22px;font-size:.95rem;font-weight:700;cursor:pointer;
+    text-decoration:none;transition:transform .08s ease, box-shadow .2s ease;
+    box-shadow:var(--shadow);
+  }
+  .btn:hover{transform:translateY(-1px)}
+  .btn--ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.3)}
+
+  /* ---------- NAV ---------- */
+  .nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.92);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav__inner{
+    max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;
+    gap:8px;padding:0 14px;
+  }
+  .nav__brand{display:flex;align-items:center;gap:9px;font-weight:800;padding:12px 0;white-space:nowrap}
+  .nav__brand img{width:26px;height:26px;object-fit:contain}
+  .nav__links{display:flex;gap:2px;overflow-x:auto;flex:1;scrollbar-width:none}
+  .nav__links::-webkit-scrollbar{display:none}
+  .nav__links a{
+    padding:14px 11px;font-size:.86rem;color:var(--ink-soft);text-decoration:none;
+    white-space:nowrap;border-bottom:2px solid transparent;font-weight:600;
+  }
+  .nav__links a:hover{color:var(--ink)}
+  .nav__links a.active{color:var(--ink);border-bottom-color:var(--accent)}
+  .nav__toggle{display:none}
+
+  /* ---------- LAYOUT ---------- */
+  main{max-width:var(--maxw);margin:0 auto;padding:8px 16px 80px}
+  section{scroll-margin-top:72px;padding:38px 0 8px}
+  .sec-head{display:flex;align-items:center;gap:14px;margin:0 0 18px}
+  .sec-num{
+    flex:none;width:40px;height:40px;border-radius:12px;background:var(--accent);
+    color:var(--accent-contrast);display:flex;align-items:center;justify-content:center;
+    font-weight:800;font-size:1.05rem;
+  }
+  .sec-head h2{margin:0;font-size:1.6rem;letter-spacing:-.01em}
+  .lead{color:var(--ink-soft);font-size:1.02rem;margin:0 0 18px}
+
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:20px 22px;box-shadow:var(--shadow);margin:0 0 16px;
+  }
+  .grid{display:grid;gap:14px}
+  .grid-2{grid-template-columns:repeat(2,1fr)}
+  .grid-3{grid-template-columns:repeat(3,1fr)}
+  @media(max-width:680px){.grid-2,.grid-3{grid-template-columns:1fr}}
+
+  .info-card h3{margin:0 0 4px;font-size:1.02rem;display:flex;gap:8px;align-items:center}
+  .info-card p{margin:0;color:var(--ink-soft);font-size:.95rem}
+  .info-card .ic{font-size:1.3rem;line-height:1}
+
+  h3.blocktitle{font-size:1.05rem;margin:22px 0 10px}
+  ul.clean{margin:0;padding-left:1.15rem}
+  ul.clean li{margin:6px 0}
+  ul.none{list-style:none;margin:0;padding:0}
+  ul.none li{margin:7px 0}
+
+  /* contacts */
+  .contact-group{margin:0 0 14px}
+  .contact-group h4{margin:0 0 8px;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .person{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px dashed var(--line)}
+  .person:last-child{border-bottom:none}
+  .person .nm{font-weight:600}
+  .person .role{color:var(--muted);font-weight:400;font-size:.9rem}
+  .person a.tel{font-variant-numeric:tabular-nums;text-decoration:none;font-weight:600;white-space:nowrap}
+
+  /* flights / travel */
+  .flight{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid var(--line)}
+  .flight:last-child{border-bottom:none}
+  .flight .fi{font-size:1.5rem}
+  .flight .meta{flex:1}
+  .flight .route{font-weight:700}
+  .flight .times{color:var(--ink-soft);font-size:.95rem}
+
+  .note{
+    border-left:4px solid var(--amber);background:#fffaf0;border-radius:10px;
+    padding:12px 16px;margin:14px 0;color:#5c4a00;
+  }
+  .note--red{border-left-color:var(--red);background:#fff5f5;color:#7a1f1f}
+
+  /* schedule timeline */
+  .day{border-left:3px solid var(--accent);padding:2px 0 2px 18px;margin:0 0 8px;position:relative}
+  .day::before{content:"";position:absolute;left:-8px;top:6px;width:13px;height:13px;border-radius:50%;background:var(--accent);border:3px solid #fff}
+  .day h3{margin:0 0 2px;font-size:1.08rem}
+  .day .dtag{color:var(--muted);font-size:.85rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+  .matches{width:100%;border-collapse:collapse;margin:10px 0 4px;font-size:.92rem}
+  .matches td{padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+  .matches .t{font-variant-numeric:tabular-nums;font-weight:700;white-space:nowrap;width:54px}
+  .matches .v{color:var(--muted);white-space:nowrap}
+  .fh{font-weight:700}
+  .event{background:#f3f4f6;border-radius:10px;padding:10px 12px;margin:10px 0 2px;font-size:.92rem}
+
+  /* squads */
+  .squad{text-align:center}
+  .squad .badge{display:inline-block;background:var(--accent);color:#fff;border-radius:8px;padding:3px 10px;font-size:.8rem;font-weight:700;margin-bottom:6px}
+  .squad h3{margin:0;font-size:1.1rem}
+  .squad p{margin:4px 0 0;color:var(--muted);font-size:.9rem}
+
+  /* group tables */
+  .ghead{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+  .ghead h3{margin:0;font-size:1.08rem}
+  .ghead .glink{margin-left:auto;font-size:.82rem;font-weight:700;text-decoration:none;color:var(--muted);white-space:nowrap}
+  .ghead .glink:hover{color:var(--ink)}
+  .teamrow{display:flex;align-items:center;gap:10px;padding:9px 6px;border-bottom:1px solid var(--line)}
+  .teamrow:last-child{border-bottom:none}
+  .teamrow .flag{font-size:1.15rem;width:1.5em;text-align:center;flex:none}
+  .teamrow .nm{flex:1}
+  .teamrow .cc{color:var(--muted);font-size:.8rem;font-weight:600;letter-spacing:.04em}
+  .teamrow.me{background:#111418;color:#fff;border-radius:10px;border-bottom:none;font-weight:800;padding-left:10px;padding-right:10px}
+  .teamrow.me .cc{color:rgba(255,255,255,.7)}
+
+  .pill-row{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 0}
+  .pill{background:#eef0f3;border-radius:999px;padding:5px 12px;font-size:.85rem;font-weight:600}
+
+  .stats{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;text-align:center;margin:6px 0 4px}
+  @media(max-width:680px){.stats{grid-template-columns:repeat(2,1fr)}}
+  .stat b{display:block;font-size:1.5rem}
+  .stat span{color:var(--muted);font-size:.82rem}
+
+  /* TOC */
+  .toc{columns:2;column-gap:24px}
+  @media(max-width:560px){.toc{columns:1}}
+  .toc a{display:flex;gap:10px;padding:8px 4px;text-decoration:none;break-inside:avoid;border-bottom:1px solid var(--line)}
+  .toc a:hover{color:#000}
+  .toc .n{font-weight:800;color:var(--muted);width:22px;text-align:right}
+
+  /* packing checklist */
+  .pack-head{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:6px}
+  .counter{font-weight:800;background:var(--accent);color:#fff;border-radius:999px;padding:5px 14px;font-variant-numeric:tabular-nums}
+  .check{display:flex;align-items:flex-start;gap:10px;padding:8px 2px;cursor:pointer;border-bottom:1px solid var(--line)}
+  .check:last-child{border-bottom:none}
+  .check input{width:20px;height:20px;margin-top:2px;accent-color:#000;flex:none}
+  .check.done span{text-decoration:line-through;color:var(--muted)}
+  .tag-carry{display:inline-block;font-size:.68rem;font-weight:800;letter-spacing:.06em;background:var(--gold);color:#3a2e00;border-radius:6px;padding:1px 7px;margin-left:8px;vertical-align:middle}
+  .tag-imp{background:var(--red);color:#fff}
+
+  /* map */
+  .map-wrap{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);line-height:0}
+  .map-wrap iframe{width:100%;height:380px;border:0}
+
+  .todo{
+    display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.05em;
+    background:#fff3cd;color:#7a5c00;border:1px dashed #d9b400;border-radius:6px;
+    padding:1px 8px;margin-left:8px;vertical-align:middle;
+  }
+
+  .badge-card{display:inline-flex;align-items:center;gap:8px;border-radius:10px;padding:8px 12px;font-weight:600;margin:4px 8px 4px 0}
+  .badge-yellow{background:#fff8e1;border:1px solid #f2d472}
+  .badge-red{background:#fdecea;border:1px solid #f1a9a0}
+
+  footer{background:#0a0c0f;color:#c7ccd3;text-align:center;padding:34px 20px}
+  footer img{width:40px;margin-bottom:10px;filter:invert(1) brightness(2);opacity:.9}
+  footer p{margin:4px 0;font-size:.9rem}
+  .backtop{display:inline-block;margin-top:10px;color:#fff;text-decoration:none;font-weight:600;font-size:.85rem;border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:7px 16px}
+
+  /* ---------- MOBILE NAV ---------- */
+  @media(max-width:760px){
+    .nav__toggle{display:inline-flex;margin-left:auto;background:none;border:none;font-size:1.5rem;cursor:pointer;padding:10px}
+    .nav__links{
+      position:absolute;left:0;right:0;top:100%;flex-direction:column;overflow:hidden;
+      background:#fff;border-bottom:1px solid var(--line);max-height:0;transition:max-height .25s ease;
+      box-shadow:var(--shadow);
+    }
+    .nav__links.open{max-height:75vh;overflow-y:auto}
+    .nav__links a{padding:13px 18px;border-bottom:1px solid var(--line)}
+    .nav__links a.active{border-bottom-color:var(--line);background:#f6f7f8}
+  }
+
+  /* ---------- PRINT ---------- */
+  @media print{
+    :root{--bg:#fff}
+    body{background:#fff}
+    .nav,.hero__actions,.nav__toggle,.backtop,.map-wrap iframe{display:none !important}
+    .hero{background:#fff;color:#000;padding:10px 0 6px}
+    .hero__kicker,.hero__sub,.hero__team{color:#000}
+    .hero__logo{box-shadow:none}
+    .chip{border:1px solid #ccc;color:#000}
+    .card{box-shadow:none;border:1px solid #ccc;break-inside:avoid}
+    section{break-inside:avoid;padding:14px 0 4px}
+    main{padding:0 6px}
+    a{text-decoration:none;color:#000}
+    .day,.matches,.squad{break-inside:avoid}
+    footer{background:#fff;color:#000}
+    footer img{filter:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== HERO ===================== -->
+<header class="hero" id="top">
+  <div class="hero__logo"><img src="assets/fh-logo.svg" alt="FH merki"></div>
+  <p class="hero__kicker">Ferðahandbók</p>
+  <h1>Gothia Cup 2026</h1>
+  <p class="hero__sub">Gautaborg · 12.–19. júlí 2026</p>
+  <p class="hero__team">FH · 4. flokkur karla</p>
+  <div class="chips">
+    <span class="chip"><b>49</b> Leikmenn</span>
+    <span class="chip"><b>4</b> Þjálfarar</span>
+    <span class="chip"><b>8</b> Liðstjórar</span>
+    <span class="chip"><b>4</b> Lið</span>
+  </div>
+  <div class="hero__actions">
+    <button class="btn" onclick="window.print()">🖨️ Prenta / Vista sem PDF</button>
+    <a class="btn btn--ghost" href="#yfirlit">Byrja að lesa ↓</a>
+  </div>
+</header>
+
+<!-- ===================== NAV ===================== -->
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <span class="nav__brand"><img src="assets/fh-logo.svg" alt="">FH · Gothia</span>
+    <button class="nav__toggle" id="navToggle" aria-label="Valmynd">☰</button>
+    <div class="nav__links" id="navLinks">
+      <a href="#yfirlit">Yfirlit</a>
+      <a href="#ferdin">Ferðin</a>
+      <a href="#dagskra">Dagskrá</a>
+      <a href="#lidaskipan">Liðaskipan</a>
+      <a href="#leikir">Leikir</a>
+      <a href="#gisting">Gisting</a>
+      <a href="#matur">Matur</a>
+      <a href="#lidstjorar">Liðstjórar</a>
+      <a href="#reglur">Reglur</a>
+      <a href="#gagnlegt">Gagnlegt</a>
+      <a href="#pokkun">Pökkun</a>
+      <a href="#kort">Kort</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+  <!-- TOC -->
+  <section id="efnisyfirlit" style="padding-top:30px">
+    <div class="card">
+      <h3 class="blocktitle" style="margin-top:0">Efnisyfirlit</h3>
+      <div class="toc">
+        <a href="#yfirlit"><span class="n">1</span> Yfirlit og tengiliðir</a>
+        <a href="#ferdin"><span class="n">2</span> Ferðaáætlun</a>
+        <a href="#dagskra"><span class="n">3</span> Dagskrá</a>
+        <a href="#lidaskipan"><span class="n">4</span> Liðaskipan</a>
+        <a href="#leikir"><span class="n">5</span> Leikjafyrirkomulag</a>
+        <a href="#gisting"><span class="n">6</span> Gisting</a>
+        <a href="#matur"><span class="n">7</span> Matur</a>
+        <a href="#lidstjorar"><span class="n">8</span> Liðstjórar og foreldrar</a>
+        <a href="#reglur"><span class="n">9</span> Reglur leikmanna</a>
+        <a href="#gagnlegt"><span class="n">10</span> Gagnlegar upplýsingar</a>
+        <a href="#pokkun"><span class="n">11</span> Pökkunarlisti</a>
+        <a href="#kort"><span class="n">12</span> Staðsetningarkort</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 1. YFIRLIT ============ -->
+  <section id="yfirlit">
+    <div class="sec-head"><span class="sec-num">1</span><h2>Yfirlit og tengiliðir</h2></div>
+    <p class="lead">Í þessum bæklingi eru upplýsingar er varða ferð 4. flokks karla í FH á Gothia Cup 2026. Alls fara 49 strákar úr flokknum á mótið og munu þeir skiptast í fjögur lið.</p>
+    <p class="lead">Með strákunum fara út fjórir þjálfarar og átta liðstjórar. Auk þess er stór hópur foreldra að fara sem gestir á mótið. Þá verða fararstjórar á vegum Verdi úti sem hafa mikla reynslu af mótinu og eru til aðstoðar við liðstjóra.</p>
+
+    <h3 class="blocktitle">Hagnýtar upplýsingar</h3>
+    <div class="grid grid-2">
+      <div class="card info-card">
+        <h3><span class="ic">🏨</span> Gististaður</h3>
+        <p>Strákarnir gista í Oxledsskolan, sem er staðsettur rétt utan við Gautaborg. Þeir fá dýnu, lak, teppi og kodda. Gott að taka með sér sinn eigin kodda — hann hefur ekki verið góður síðustu ár.</p>
+      </div>
+      <div class="card info-card">
+        <h3><span class="ic">🌐</span> Heimasíða</h3>
+        <p><a href="https://www.gothiacup.se" target="_blank" rel="noopener">gothiacup.se</a> — mælt er með Gothia appinu.</p>
+      </div>
+      <div class="card info-card">
+        <h3><span class="ic">📘</span> Facebook</h3>
+        <p>Hópurinn „FH GothiaCup 2026 kk“.</p>
+      </div>
+      <div class="card info-card">
+        <h3><span class="ic">🚌</span> Samgöngur</h3>
+        <p>Gothia-kortið veitir fríar ferðir með almenningssamgöngum í Gautaborg.</p>
+      </div>
+    </div>
+
+    <h3 class="blocktitle">⚽ Þjálfarar</h3>
+    <div class="card">
+      <div class="person"><span class="nm">Arnar</span><a class="tel" href="tel:+3548419874">841-9874</a></div>
+      <div class="person"><span class="nm">Þjálfari 2 <span class="todo">VANTAR</span></span><span class="role">—</span></div>
+      <div class="person"><span class="nm">Þjálfari 3 <span class="todo">VANTAR</span></span><span class="role">—</span></div>
+      <div class="person"><span class="nm">Þjálfari 4 <span class="todo">VANTAR</span></span><span class="role">—</span></div>
+    </div>
+
+    <h3 class="blocktitle">🧑‍🏫 Liðstjórar</h3>
+    <div class="grid grid-2">
+      <div class="card">
+        <div class="contact-group">
+          <h4>FH 1 · B14</h4>
+          <div class="person"><span class="nm">Erla <span class="role">(Óli Steinn)</span></span><a class="tel" href="tel:+3548961325">896-1325</a></div>
+          <div class="person"><span class="nm">Gestur <span class="role">(Jón Mikael)</span></span><a class="tel" href="tel:+3546613781">661-3781</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="contact-group">
+          <h4>FH 2 · B14</h4>
+          <div class="person"><span class="nm">Anton <span class="role">(Arnar Emil)</span></span><a class="tel" href="tel:+3548923129">892-3129</a></div>
+          <div class="person"><span class="nm">Haukur <span class="role">(Tómas)</span></span><a class="tel" href="tel:+3546950740">695-0740</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="contact-group">
+          <h4>FH 1 · B14B</h4>
+          <div class="person"><span class="nm">Ólöf Heiða <span class="role">(Friðrik Brynjar)</span></span><a class="tel" href="tel:+3548630732">863-0732</a></div>
+          <div class="person"><span class="nm">Örvar <span class="role">(Jakob Snær)</span></span><a class="tel" href="tel:+3546953536">695-3536</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="contact-group">
+          <h4>FH 2 · B14B</h4>
+          <div class="person"><span class="nm">Guðmundur <span class="role">(Örvar)</span></span><a class="tel" href="tel:+3546605255">660-5255</a></div>
+          <div class="person"><span class="nm">Sigrún <span class="role">(Logi)</span></span><a class="tel" href="tel:+3548257123">825-7123</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 2. FERÐAÁÆTLUN ============ -->
+  <section id="ferdin">
+    <div class="sec-head"><span class="sec-num">2</span><h2>Ferðaáætlun</h2></div>
+
+    <div class="card">
+      <div class="flight">
+        <span class="fi">✈️</span>
+        <div class="meta">
+          <div class="route">Til Gautaborgar · 12. júlí (FI 382)</div>
+          <div class="times">KEF → GOT · brottför 09:30 – lending 14:30</div>
+        </div>
+      </div>
+      <div class="flight">
+        <span class="fi">✈️</span>
+        <div class="meta">
+          <div class="route">Heimferð · 19. júlí (FI 217)</div>
+          <div class="times">CPH → KEF · brottför 22:35 – lending 23:50</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-2">
+      <div class="card">
+        <h3 class="blocktitle" style="margin-top:0">🌅 Ferðin út · sunnudaginn 12. júlí</h3>
+        <ul class="clean">
+          <li>Mæting í Kaplakrika kl. <b>05:45</b> þann 12. júlí.</li>
+          <li>Farið verður með rútu til Keflavíkur. ALLIR leikmenn fara með liðinu.</li>
+          <li>Brottför frá Kaplakrika stundvíslega kl. <b>06:00</b>.</li>
+          <li>12. júlí (FI 382) KEF → GOT: brottför 09:30 – lending 14:30.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 class="blocktitle" style="margin-top:0">🌇 Ferðin heim · sunnudaginn 19. júlí</h3>
+        <ul class="clean">
+          <li>Rúta frá Gautaborg til Kaupmannahafnar. Ferðin tekur u.þ.b. 4–4,5 klukkustundir.</li>
+          <li>19. júlí (FI 217) CPH → KEF: brottför 22:35 – lending 23:50.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="note note--red">⚠️ <b>ATH!</b> Engin rúta sækir strákana við heimkomu. Foreldrar þurfa að sækja út á völl.</div>
+
+    <div class="card">
+      <h3 class="blocktitle" style="margin-top:0">📌 Nokkrir punktar fyrir ferðalag</h3>
+      <ul class="clean">
+        <li>Muna að merkja allar töskur, líka handfarangur.</li>
+        <li>Mælum með að merkja töskuna með áberandi merki svo strákarnir þekki sína tösku!</li>
+        <li>Keppnisgallinn ásamt takkaskóm á að vera í handfarangri.</li>
+        <li>Hámarksþyngd tösku 20 kg. Handfarangur er bakpokinn sem fæst afhentur. Einungis ein 20 kg taska per leikmann.</li>
+        <li>Liðstjórar sjá um innritun á Keflavíkurflugvelli, ekki hægt að velja sæti.</li>
+        <li>Engar breytingar eða bókanir skulu gerðar af foreldrum.</li>
+        <li>Foreldrar útskýri yfirvigt farangurs fyrir strákunum.</li>
+        <li>Minna strákana á að athuga sætisvasann í flugvélinni áður en farið er úr vélinni.</li>
+      </ul>
+      <div class="note">👗 <b>Ferðagalli:</b> Bolur og peysa sem við afhendum 9. júlí — strákarnir eru í þessu á ferðalaginu út og heim.</div>
+    </div>
+  </section>
+
+  <!-- ============ 3. DAGSKRÁ ============ -->
+  <section id="dagskra">
+    <div class="sec-head"><span class="sec-num">3</span><h2>Dagskrá</h2></div>
+    <p class="lead">Dagskrá þessi er ekki tæmandi enda fjögur lið frá FH. Riðlakeppnin fer fram mánudag til miðvikudags (3–4 leikir á lið). Úrslitakeppni og tímasetningar hennar birtast síðar.</p>
+
+    <div class="pill-row" style="margin-bottom:18px">
+      <span class="pill">FH 1 · B14 · Riðill 10</span>
+      <span class="pill">FH 2 · B14 · Riðill 11</span>
+      <span class="pill">FH 1 · B14B · Riðill 18</span>
+      <span class="pill">FH 2 · B14B · Riðill 17</span>
+    </div>
+
+    <div class="card">
+      <div class="day">
+        <span class="dtag">Sunnudagur 12. júlí</span>
+        <h3>🗓 Ferðadagur</h3>
+        <p style="margin:4px 0 0;color:var(--ink-soft)">Mæting í Kaplakrika kl. 05:45. Lendum í Gautaborg 14:30. Kvöldmatur á vegum Gothia Cup.</p>
+      </div>
+
+      <div class="day">
+        <span class="dtag">Mánudagur 13. júlí</span>
+        <h3>⚽ Mót hefst · Riðlar</h3>
+        <table class="matches">
+          <tr><td class="t">09:00</td><td><span class="fh">FH 1</span> – HSV Football 2 <span class="v">· Riðill 10</span></td><td class="v">Kviberg 21</td></tr>
+          <tr><td class="t">11:30</td><td><span class="fh">FH 2 (B)</span> – Skurups AIF</td><td class="v">Bergsjövallen 3</td></tr>
+          <tr><td class="t">12:20</td><td><span class="fh">FH 1 (B)</span> – Stenkullen GoIK</td><td class="v">Kviberg 23</td></tr>
+          <tr><td class="t">13:50</td><td>Ascent Soccer – <span class="fh">FH 1</span></td><td class="v">Kortedalavallen 1</td></tr>
+          <tr><td class="t">16:00</td><td><span class="fh">FH 2</span> – Surte IS FK</td><td class="v">Kviberg 18</td></tr>
+        </table>
+        <div class="event">🎉 Opnunarhátíð á Ullevi Stadium kl. 20:00 (hlið opnar 18:30). Engar töskur/bakpokar leyfðir.</div>
+      </div>
+
+      <div class="day">
+        <span class="dtag">Þriðjudagur 14. júlí</span>
+        <h3>⚽ Riðlar</h3>
+        <table class="matches">
+          <tr><td class="t">08:00</td><td><span class="fh">FH 1 (B)</span> – ProGen FC</td><td class="v">Kviberg 10</td></tr>
+          <tr><td class="t">11:30</td><td>Årsta FF – <span class="fh">FH 2 (B)</span></td><td class="v">Kviberg 22</td></tr>
+          <tr><td class="t">12:50</td><td>Västerås SK Ungdom 2 – <span class="fh">FH 1</span></td><td class="v">Bergsjövallen 1</td></tr>
+          <tr><td class="t">13:50</td><td><span class="fh">FH 2</span> – EDY Sport Enrichment Center</td><td class="v">Furulunds IP</td></tr>
+        </table>
+        <div class="event">🎉 Leaders party fyrir fararstjóra liða kl. 19:00–24:00. Foreldrar standa vaktina með liðunum á meðan.</div>
+      </div>
+
+      <div class="day">
+        <span class="dtag">Miðvikudagur 15. júlí</span>
+        <h3>⚽ Riðlar</h3>
+        <table class="matches">
+          <tr><td class="t">11:00</td><td><span class="fh">FH 1</span> – Ubynäs SK</td><td class="v">Kviberg 21</td></tr>
+          <tr><td class="t">12:20</td><td><span class="fh">FH 1 (B)</span> – Kallhälls FF Vit</td><td class="v">Härlanda 2</td></tr>
+          <tr><td class="t">13:00</td><td>Eskilsminne IF 1 – <span class="fh">FH 2</span></td><td class="v">Kviberg 11</td></tr>
+          <tr><td class="t">14:50</td><td>Jonsereds IF – <span class="fh">FH 2 (B)</span></td><td class="v">Kviberg 22</td></tr>
+        </table>
+      </div>
+
+      <div class="day">
+        <span class="dtag">Fimmtudagur 16. júlí</span>
+        <h3>🏆 Úrslitakeppni</h3>
+        <p style="margin:4px 0 0;color:var(--ink-soft)">Riðlakeppni lokið. Úrslitakeppni hefst. Leikjaskrá og tímar birtast þegar staða úr riðlum liggur fyrir.</p>
+      </div>
+
+      <div class="day">
+        <span class="dtag">Föstudagur 17. júlí</span>
+        <h3>📋 Úrslitakeppni</h3>
+        <p style="margin:4px 0 0;color:var(--ink-soft)">Leikjaskrá úrslitakeppni hefur ekki verið birt.</p>
+      </div>
+
+      <div class="day">
+        <span class="dtag">Laugardagur 18. júlí</span>
+        <h3>📋 Úrslitakeppni</h3>
+        <p style="margin:4px 0 0;color:var(--ink-soft)">Hugsanlegir úrslitaleikir að morgni, leikjaskrá ekki birt.</p>
+      </div>
+
+      <div class="day">
+        <span class="dtag">Sunnudagur 19. júlí</span>
+        <h3>🏁 Heimferð</h3>
+        <p style="margin:4px 0 0;color:var(--ink-soft)">Farið með rútu til Kaupmannahafnar (u.þ.b. 4–4,5 klst). Lendum á Íslandi kl. 23:50. 🚫 Stranglega bannað er að taka leikmann úr hópnum fyrir heimferð án þess að láta liðstjóra vita. Foreldrar sækja út á völl.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4. LIÐASKIPAN ============ -->
+  <section id="lidaskipan">
+    <div class="sec-head"><span class="sec-num">4</span><h2>Liðaskipan</h2></div>
+    <p class="lead">Lið FH í 4. flokki karla spila í Boys 14 (B14) og Boys 14 B (B14B). Hvert lið spilar þrjá riðlaleiki nema FH 1 sem spilar 4 riðlaleiki. Eftir riðlakeppnina munu efstu liðin færast upp um styrkleika og þau neðstu spila í neðri styrkleika.</p>
+
+    <div class="grid grid-2">
+
+      <div class="card">
+        <div class="ghead">
+          <span class="badge">B14</span>
+          <h3>FH 1 · Riðill 10</h3>
+          <a class="glink" href="https://results.gothiacup.se/2026/categories/71404710/division/81405824" target="_blank" rel="noopener">Lifandi staða ↗</a>
+        </div>
+        <div class="teamrow me"><span class="flag">🇮🇸</span><span class="nm">FH 1</span><span class="cc">ISL</span></div>
+        <div class="teamrow"><span class="flag">🇸🇪</span><span class="nm">Utbynäs SK</span><span class="cc">SWE</span></div>
+        <div class="teamrow"><span class="flag">🇸🇪</span><span class="nm">Västerås SK Ungdom 2</span><span class="cc">SWE</span></div>
+        <div class="teamrow"><span class="flag">🇲🇼</span><span class="nm">Ascent Soccer</span><span class="cc">MWI</span></div>
+        <div class="teamrow"><span class="flag">🇳🇴</span><span class="nm">HSV Fotball 2</span><span class="cc">NOR</span></div>
+      </div>
+
+      <div class="card">
+        <div class="ghead">
+          <span class="badge">B14</span>
+          <h3>FH 2 · Riðill 11</h3>
+          <a class="glink" href="https://results.gothiacup.se/2026/categories/71404710/division/81405838" target="_blank" rel="noopener">Lifandi staða ↗</a>
+        </div>
+        <div class="teamrow me"><span class="flag">🇮🇸</span><span class="nm">FH 2</span><span class="cc">ISL</span></div>
+        <div class="teamrow"><span class="flag">🇸🇪</span><span class="nm">Eskilsminne IF 1</span><span class="cc">SWE</span></div>
+        <div class="teamrow"><span class="flag">🇸🇪</span><span class="nm">Surte IS FK</span><span class="cc">SWE</span></div>
+        <div class="teamrow"><span class="flag">🇪🇹</span><span class="nm">EDY Sport Enrichment Center</span><span class="cc">ETH</span></div>
+      </div>
+
+      <div class="card">
+        <div class="ghead">
+          <span class="badge">B14B</span>
+          <h3>FH 1 · Riðill 18</h3>
+          <a class="glink" href="https://results.gothiacup.se/2026/categories/71404715/division/81406666" target="_blank" rel="noopener">Lifandi staða ↗</a>
+        </div>
+        <div class="teamrow me"><span class="flag">🇮🇸</span><span class="nm">FH 1</span><span class="cc">ISL</span></div>
+        <div class="teamrow"><span class="flag">🇸🇪</span><span class="nm">Stenkullen GoIK</span><span class="cc">SWE</span></div>
+        <div class="teamrow"><span class="flag">🇸🇪</span><span class="nm">Kallhälls FF Vit</span><span class="cc">SWE</span></div>
+        <div class="teamrow"><span class="flag">🇬🇭</span><span class="nm">ProGen FC</span><span class="cc">GHA</span></div>
+      </div>
+
+      <div class="card">
+        <div class="ghead">
+          <span class="badge">B14B</span>
+          <h3>FH 2 · Riðill 17</h3>
+          <a class="glink" href="https://results.gothiacup.se/2026/categories/71404715/division/81406650" target="_blank" rel="noopener">Lifandi staða ↗</a>
+        </div>
+        <div class="teamrow me"><span class="flag">🇮🇸</span><span class="nm">FH 2</span><span class="cc">ISL</span></div>
+        <div class="teamrow"><span class="flag">🇸🇪</span><span class="nm">Jonsereds IF</span><span class="cc">SWE</span></div>
+        <div class="teamrow"><span class="flag">🇸🇪</span><span class="nm">Skurups AIF</span><span class="cc">SWE</span></div>
+        <div class="teamrow"><span class="flag">🇸🇪</span><span class="nm">Årsta FF</span><span class="cc">SWE</span></div>
+      </div>
+
+    </div>
+    <div class="note">Mótherjar í riðlum sóttir af <a href="https://results.gothiacup.se" target="_blank" rel="noopener">results.gothiacup.se</a>. Staða og röð uppfærist á þeirri síðu þegar mótið hefst — smelltu á „Lifandi staða“ við hvern riðil. Riðlaleiki má sjá í <a href="#dagskra">Dagskrá</a>.</div>
+  </section>
+
+  <!-- ============ 5. LEIKJAFYRIRKOMULAG ============ -->
+  <section id="leikir">
+    <div class="sec-head"><span class="sec-num">5</span><h2>Leikjafyrirkomulag</h2></div>
+    <div class="grid grid-2">
+      <div class="card info-card">
+        <h3><span class="ic">📅</span> Riðlakeppni</h3>
+        <p>Mánudag til miðvikudags. Hvert lið spilar 3–4 leiki. Leiktími: <b>2 × 25 mínútur</b>.</p>
+      </div>
+      <div class="card info-card">
+        <h3><span class="ic">🏆</span> Úrslitakeppni</h3>
+        <p>Hefst á fimmtudegi. Leiktími: <b>2 × 30 mínútur</b>.</p>
+      </div>
+    </div>
+    <div class="card">
+      <p style="margin:0;color:var(--ink-soft)">Eftir riðlakeppnina færast efstu liðin upp um styrkleika og þau neðstu spila í neðri styrkleika. Leikjaskrá úrslitakeppni birtist þegar staða úr riðlum liggur fyrir.</p>
+    </div>
+  </section>
+
+  <!-- ============ 6. GISTING ============ -->
+  <section id="gisting">
+    <div class="sec-head"><span class="sec-num">6</span><h2>Gisting</h2></div>
+    <p class="lead">Strákarnir gista í Oxledsskolan, sem er staðsettur rétt utan við Gautaborg. Hvert lið er með sér skólastofu.</p>
+    <div class="card">
+      <ul class="clean">
+        <li>Allir sameinast um að hafa snyrtilegt í kringum sig. Strangar reglur gilda varðandi umgengni og læti og ber öllum að sameinast um að þær séu virtar.</li>
+        <li>Læti á gangi og í sameiginlegum rýmum eru ekki leyfileg og boltaleikir eru algjörlega bannaðir inni.</li>
+      </ul>
+      <div class="note">🇯🇵 Japanskir knattspyrnuáhugamenn eru heimsþekktir fyrir að þrífa upp eftir sig á leikvöngum, jafnvel þótt ruslið sé ekki þeirra eigið. Tökum okkur það til fyrirmyndar og skiljum við hvern stað — hvort sem það er gisting eða keppnisvöllur — í betra ásigkomulagi en við komum að honum.</div>
+    </div>
+  </section>
+
+  <!-- ============ 7. MATUR ============ -->
+  <section id="matur">
+    <div class="sec-head"><span class="sec-num">7</span><h2>Matur</h2></div>
+    <p class="lead">Morgunmatur, hádegismatur og kvöldmatur er í matsal í skólanum þar sem við gistum.</p>
+    <div class="card">
+      <ul class="clean">
+        <li>Liðstjórar sjá um kvöldmat á laugardeginum 18. júlí og morgunmat á sunnudeginum 19. júlí — þessar máltíðir eru innifaldar í verðinu.</li>
+        <li>Liðstjórar kaupa ávexti og nesti milli leikja.</li>
+        <li>Á matseðli Gothia Cup 2026 eru ofnæmismerkingar: <b>G</b> (glúten), <b>L</b> (laktósi), <b>E</b> (egg).</li>
+        <li>Þeir sem pöntuðu sérfæði í gegnum Vita fá afhenta miða sem þarf að framvísa við máltíð.</li>
+      </ul>
+      <div class="note">🍝 <b>Skemmtileg staðreynd:</b> Vinsælasti rétturinn í skólamötuneytunum á Gothia Cup eru kjötbollur með kartöflumús — alls eru um 255.000 kjötbollur bornar fram á mótinu.</div>
+    </div>
+  </section>
+
+  <!-- ============ 8. LIÐSTJÓRAR ============ -->
+  <section id="lidstjorar">
+    <div class="sec-head"><span class="sec-num">8</span><h2>Liðstjórar og aðrir foreldrar úti</h2></div>
+    <p class="lead">Átta manna hópur foreldra sér um liðstjórn FH-liðanna, tveir liðstjórar á hvert lið.</p>
+    <div class="card">
+      <h3 class="blocktitle" style="margin-top:0">Hlutverk liðstjóra</h3>
+      <ul class="clean">
+        <li>Sjá um liðið með þjálfurum og aðstoða við leiki.</li>
+        <li>Innrita liðið í flug.</li>
+        <li>Koma liðinu á keppnisvelli, fylgja því í mat og útvega nesti.</li>
+        <li>Skipuleggja frítíma eftir leikjaskrá.</li>
+        <li>Halda utan um töskur og fatnað leikmanna á meðan leikjum stendur.</li>
+        <li>Bera daglega ábyrgð á leikmönnum og sofa með liðinu.</li>
+        <li>Safna saman og geyma sjúkratryggingakort, vegabréf og lyf.</li>
+        <li>Fylgjast með leiktímum og breytingum.</li>
+        <li>Koma í veg fyrir að leikmenn fari úr hópnum — hvorki stakir né nokkrir saman.</li>
+      </ul>
+      <div class="note">Það að taka að sér liðstjórn er talsverð vinna. Biðjum aðra foreldra að bjóða fram aðstoð, virða vinnubrögð liðstjóra og leyfa þeim smá hvíld þegar við á.</div>
+    </div>
+  </section>
+
+  <!-- ============ 9. REGLUR ============ -->
+  <section id="reglur">
+    <div class="sec-head"><span class="sec-num">9</span><h2>Reglur leikmanna</h2></div>
+    <p class="lead">4. flokki FH á Gothia Cup 2026 ber að:</p>
+    <div class="card">
+      <ul class="clean">
+        <li>Koma fram af kurteisi við alla sem þeir eiga samskipti við.</li>
+        <li>Hafa ávallt gleði og jákvæðni í huga.</li>
+        <li>Bera virðingu fyrir og hlýða fyrirmælum þjálfara og liðstjóra sem og starfsmönnum mótsins.</li>
+        <li>Fara út sem hópur og vera meðvitaðir um að öllum líði vel, innan vallar sem utan.</li>
+        <li>Leggja sig fram við að gera ferðina að skemmtilegri upplifun og skapa góðar minningar.</li>
+        <li>Hafa auga með hver öðrum — vera aldrei færri en þrír saman á ferð.</li>
+        <li>Fara í sturtu við lok keppni hvers dags.</li>
+        <li>Mæta á réttum tíma og fylgja öllum reglum sem þjálfarar og liðstjórar setja.</li>
+        <li>Virða útivistartíma sem liðstjórar setja.</li>
+        <li>Halda ekki vöku fyrir öðrum eftir að svefntími er kominn.</li>
+        <li>Reyna að horfa á leiki annarra liða í flokknum ef tækifæri gefst til.</li>
+        <li>Vera FH til sóma innan vallar sem utan.</li>
+        <li>Vera meðvitaðir um þau verðmæti sem þeir taka með sér út.</li>
+        <li>Hita upp í einum hóp fyrir leiki án undantekninga.</li>
+        <li>Gæta hófs í nammiáti — ekki borða nammi þegar leikir eru.</li>
+        <li>Það er stranglega bannað að fara af gististaðnum án leyfis liðstjóra.</li>
+      </ul>
+      <p style="color:var(--ink-soft)">Ef iðkandi fer verulega á skjön við reglur mótsins/liðstjóra eða almennar samskiptareglur er tekið á því af liðstjórum og þjálfurum.</p>
+      <p style="color:var(--ink-soft)">Við ítrekum að foreldrar hafa ekki leyfi til að taka syni sína úr hópnum né koma með sérstakan mat handa þeim. Það er þó í boði, í samráði við liðstjórn, að færa öllum einhvern glaðning.</p>
+    </div>
+
+    <h3 class="blocktitle">⚖️ Hegðunarsáttmáli · Gothia Cup 2026</h3>
+    <p class="lead">Í keppnisferðalagi á vegum FH skal leikmaður:</p>
+    <div class="card">
+      <ul class="none">
+        <li><b>Fulltrúi</b> — vera verðugur fulltrúi FH hvert sem ég fer.</li>
+        <li><b>Framlag</b> — koma vel undirbúinn til leiks og leggja mig allan fram til þess að liðið mitt nái árangri.</li>
+        <li><b>Hvatning</b> — hvetja liðsfélaga mína áfram og gefast aldrei upp!</li>
+        <li><b>Virðing</b> — koma fram af virðingu við mótherja og dómara.</li>
+        <li><b>Liðsandi</b> — leggja mig fram við að efla liðsanda; allir eru jafnir og enginn skilinn útundan.</li>
+        <li><b>Hófsemi</b> — fagna af hófsemi við sigur og sýna stillingu við tap.</li>
+        <li><b>Fyrirmæli</b> — fara eftir fyrirmælum þjálfara og liðstjóra.</li>
+        <li><b>Útivistartími</b> — virða útivistartíma og vera aldrei færri en 3 strákar saman. <span class="todo">ATH. HVENÆR LOKAR SKÓLINN — SETJA TÍMA</span></li>
+        <li><b>Umgengni</b> — ganga vel um skólastofuna, matsal og keppnisvelli.</li>
+        <li><b>Tillitssemi</b> — raska ekki svefnró annarra.</li>
+        <li><b>Stundvísi</b> — mæta stundvíslega í matartíma og í leiki.</li>
+        <li><b>Ábyrgð</b> — taka ábyrgð á sínum útbúnaði, fatnaði, síma og greiðslukortum.</li>
+        <li><b>Snjallsímar</b> — gæta varúðar í símanotkun; ekki taka myndir né senda nema allir séu samþykkir.</li>
+        <li><b>Kurteisi</b> — vera kurteis við starfsmenn á svæðinu og liðstjóra.</li>
+        <li><b>Vímuefni</b> — notkun hvers konar vímuefna er óheimil.</li>
+        <li><b>Life360</b> — vera með Life360 appið opið á hverjum tíma.</li>
+      </ul>
+    </div>
+
+    <h3 class="blocktitle">Viðurlög við brotum</h3>
+    <div class="card">
+      <p style="margin-top:0;color:var(--ink-soft)">Verði leikmaður uppvís að því að brjóta þessar reglur þá gilda eftirfarandi viðurlög:</p>
+      <div>
+        <span class="badge-card badge-yellow">🟡 <b>Gult spjald</b> — fyrsta brot: hringt í foreldra og leikmaður situr á bekknum í næsta leik.</span>
+        <span class="badge-card badge-red">🔴 <b>Rautt spjald</b> — annað brot: leikmaður er sendur heim á kostnað foreldra.</span>
+      </div>
+      <p style="color:var(--ink-soft)">Foreldrar skulu fara yfir þennan hegðunarsáttmála með leikmönnum. Höfum leikgleði og virðingu fyrir öllum þátttakendum leiksins að leiðarljósi þegar við komum fram fyrir hönd FH.</p>
+    </div>
+  </section>
+
+  <!-- ============ 10. GAGNLEGT ============ -->
+  <section id="gagnlegt">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Gagnlegar upplýsingar</h2></div>
+
+    <div class="card">
+      <h3 class="blocktitle" style="margin-top:0">🌍 Um Gothia Cup</h3>
+      <p style="color:var(--ink-soft)">Gothia Cup er stærsta og alþjóðlegasta ungmennamót í knattspyrnu í heiminum og hefur verið haldið í Gautaborg frá árinu 1975. Frá upphafi hafa yfir 1 milljón leikmenn tekið þátt og 153 þjóðir átt fulltrúa á mótinu.</p>
+      <div class="stats">
+        <div class="stat"><b>1.939</b><span>Lið</span></div>
+        <div class="stat"><b>74</b><span>Þjóðir</span></div>
+        <div class="stat"><b>4.905</b><span>Leikir</span></div>
+        <div class="stat"><b>119</b><span>Vellir</span></div>
+        <div class="stat"><b>21.747</b><span>Mörk</span></div>
+      </div>
+      <p style="color:var(--muted);font-size:.88rem">Tölur frá Gothia Cup 2025 (49. mótið). Árið 2026 er 50. mótið í röðinni.</p>
+      <ul class="clean">
+        <li>Stúlknalið hafa tekið þátt allt frá fyrsta mótinu árið 1975.</li>
+        <li>Sex þjóðir hafa tekið þátt í öllum mótunum: Svíþjóð, Þýskaland, Noregur, Finnland, England og Danmörk.</li>
+        <li>Streymt er frá yfir 2.500 leikjum á mótinu.</li>
+      </ul>
+    </div>
+
+    <div class="grid grid-2">
+      <div class="card info-card"><h3><span class="ic">💳</span> Gothia Card</h3><p>Veitir frían aðgang að öllum samgöngutækjum borgarinnar, sem og góð kjör í söfn, sundlaugar og fleira.</p></div>
+      <div class="card info-card"><h3><span class="ic">🎡</span> Liseberg</h3><p>Innifalið í verðinu er dagpassi í Liseberg skemmtigarðinn.</p></div>
+    </div>
+
+    <div class="card">
+      <h3 class="blocktitle" style="margin-top:0">🏟 Leikvangar</h3>
+      <p style="color:var(--ink-soft)">Leikið er víðsvegar í Gautaborg. Vellirnir skiptast í: Kviberg, Bergsjövallen, Kortedalavallen, Furulunds IP, Härlanda og Gamlestadsvallen.</p>
+      <p style="color:var(--ink-soft)">Miðstöð mótsins er í <b>Heden Center</b> við miðbæinn. Þar er upplýsingaborðið og höfuðstöðvar mótsins í gegnum vikuna. Heden er miðsvæðis, stutt rölt frá Ullevi (þar sem opnunarhátíðin fer fram) og aðalgötu borgarinnar, Avenyn. Á svæðinu er einnig Food Court og Gothia Store þar sem hægt er að kaupa íþróttaföt og opinbera minjagripi mótsins.</p>
+    </div>
+
+    <div class="card info-card"><h3><span class="ic">📺</span> Leikir sýndir beint</h3><p>Hægt er að horfa á streymi frá flestum leikjum og kaupa bæði staka leiki og pass sem gildir fyrir allt mótið.</p></div>
+
+    <div class="card">
+      <h3 class="blocktitle" style="margin-top:0">🏥 Sjúkraaðstaða, lyf og ofnæmi</h3>
+      <ul class="clean">
+        <li>Ef sérstakar aðstæður eru til staðar (sjúkdómar, ofnæmi) skal láta liðstjóra vita fyrir brottför.</li>
+        <li>Strákarnir taka með sér sólarvörn, after-sun, mýbitsvörn og after-bite.</li>
+        <li>Senda strákana með plástra (t.d. Second Skin) og lyf sem þeir þurfa.</li>
+        <li>Liðstjórar gefa strákunum ekki verkjalyf nema foreldrar hafi veitt skriflegt leyfi.</li>
+        <li>Sjúkratjöld eru við alla leikstaði og stutt er á sjúkrahús.</li>
+      </ul>
+    </div>
+
+    <div class="grid grid-2">
+      <div class="card">
+        <h3 class="blocktitle" style="margin-top:0">🛡️ Tryggingar</h3>
+        <p style="color:var(--ink-soft)">Allir strákarnir eiga að hafa evrópska sjúkratryggingakortið meðferðis — passa gildistíma! Liðstjórar hafa kortin í sinni vörslu á meðan á ferð stendur.</p>
+      </div>
+      <div class="card">
+        <h3 class="blocktitle" style="margin-top:0">💳 Peningar og verðmæti</h3>
+        <ul class="clean">
+          <li>Fjölmargir staðir í Svíþjóð taka ekki við reiðufé — nota kort.</li>
+          <li>Liðstjórar geyma eingöngu KORT (ekki pening) á meðan leikjum stendur.</li>
+          <li>Ekki er mælst til þess að strákarnir taki önnur tæki með sér en síma.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3 class="blocktitle" style="margin-top:0">📱 Símar</h3>
+      <ul class="clean">
+        <li>Símar eru leyfðir en liðstjórar stýra notkun á kvöldin.</li>
+        <li>Símar eru geymdir á meðan á leikjum stendur, annars á ábyrgð strákanna.</li>
+        <li>STRANGLEGA BANNAÐ að vera með síma í matsalnum eða í kringum leikina.</li>
+        <li>Foreldrar kenna strákunum að slökkva á talhólfi, data roaming o.s.frv., nýta Wi-Fi og setja upp eSIM svo hægt sé að ná í þá utan Wi-Fi ef þörf krefur.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 class="blocktitle" style="margin-top:0">📌 Nokkur mikilvæg atriði</h3>
+      <ul class="clean">
+        <li>WhatsApp er notað fyrir skilaboð til leikmanna ásamt Life360 fyrir staðsetningu.</li>
+        <li>Nauðsynlegt er að strákarnir hafi 4G net á meðan við erum úti.</li>
+        <li>eSIM fyrir Svíþjóð: <a href="https://icelandair.breezesim.com" target="_blank" rel="noopener">icelandair.breezesim.com</a></li>
+        <li>Allir strákarnir taka mynd af vegabréfi, sjúkratryggingakorti og leyfisbréfi.</li>
+        <li>Foreldrar fylla út og kvitta á leyfisbréf.</li>
+        <li>Liðstjórar geyma vegabréfin, sjúkratryggingakortin og leyfisbréfin á meðan á mótinu stendur.</li>
+        <li>Liðið gerir allt saman sem EINN hópur. Ekki er leyfilegt að foreldrar taki sinn strák úr hópnum á meðan mótinu stendur.</li>
+        <li>Strákunum ber að virða allar ákvarðanir þjálfara og liðstjóra.</li>
+        <li>Við erum gestir á mótinu og okkur ber að virða umgengnisreglur og siði sem þar gilda. Liðið ber sameiginlega ábyrgð á því að skilja ekki rusl eftir sig.</li>
+        <li>Mjög mikilvægt að hafa með sér vatnsbrúsa og derhúfu — hitinn getur orðið mikill.</li>
+        <li>Setja skal Gothia Cup-appið í símann og skoða það reglulega.</li>
+        <li>Strákarnir mega aldrei vera færri en þrír til fjórir saman í hóp, og stranglega bannað er að fara út fyrir gististaðinn og keppnissvæði án leyfis liðstjóra og/eða þjálfara.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 11. PÖKKUN ============ -->
+  <section id="pokkun">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Pökkunarlisti</h2></div>
+    <p class="lead">Munið að merkja allt vel! Hakaðu við hlutina jafnóðum og þú pakkar — staðan geymist sjálfkrafa í vafranum á þessu tæki.</p>
+
+    <div class="card" id="packlist">
+      <div class="pack-head">
+        <h3 class="blocktitle" style="margin:0">📦 Pökkun</h3>
+        <div><span class="counter" id="packCounter">0 / 0</span>
+          <button class="btn" style="padding:7px 14px;font-size:.85rem;box-shadow:none;border:1px solid var(--line)" onclick="resetPack()">Núlla</button>
+        </div>
+      </div>
+
+      <h3 class="blocktitle">📋 Skjöl og kort</h3>
+      <label class="check"><input type="checkbox"><span>Vegabréf (taka mynd og hafa í síma)</span></label>
+      <label class="check"><input type="checkbox"><span>Evrópska sjúkratryggingakortið (taka mynd)</span></label>
+      <label class="check"><input type="checkbox"><span>Debetkort í síma</span></label>
+
+      <h3 class="blocktitle">⚽ Íþróttabúnaður</h3>
+      <label class="check"><input type="checkbox"><span>Fótboltaskór (gervigras eða takkaskór) <span class="tag-carry">HANDFARANGUR</span></span></label>
+      <label class="check"><input type="checkbox"><span>Keppnisföt <span class="tag-carry">HANDFARANGUR</span></span></label>
+      <label class="check"><input type="checkbox"><span>Vara keppnistreyja (fæst rétt fyrir mót)</span></label>
+      <label class="check"><input type="checkbox"><span>Keppnisstuttbuxur</span></label>
+      <label class="check"><input type="checkbox"><span>Fótboltasokkar (nóg af þeim)</span></label>
+      <label class="check"><input type="checkbox"><span>Legghlífar</span></label>
+      <label class="check"><input type="checkbox"><span>Bakpokinn (keppnisföt + búnaður) <span class="tag-carry tag-imp">MIKILVÆGT</span></span></label>
+
+      <h3 class="blocktitle">👗 Föt og fatnaður</h3>
+      <label class="check"><input type="checkbox"><span>Ferðapeysan</span></label>
+      <label class="check"><input type="checkbox"><span>Ferðabolur</span></label>
+      <label class="check"><input type="checkbox"><span>Utanyfirgalli</span></label>
+      <label class="check"><input type="checkbox"><span>Regnjakki</span></label>
+      <label class="check"><input type="checkbox"><span>2–3 buxur</span></label>
+      <label class="check"><input type="checkbox"><span>1–2 stuttbuxur</span></label>
+      <label class="check"><input type="checkbox"><span>4–6 bolir</span></label>
+      <label class="check"><input type="checkbox"><span>1 þægilegt skópar</span></label>
+      <label class="check"><input type="checkbox"><span>1 inniskór</span></label>
+      <label class="check"><input type="checkbox"><span>Sundföt og handklæði</span></label>
+
+      <h3 class="blocktitle">🧴 Hreinlæti og heilsa</h3>
+      <label class="check"><input type="checkbox"><span>Snyrti- og hreinlætisvörur</span></label>
+      <label class="check"><input type="checkbox"><span>Sólarvörn & after-sun</span></label>
+      <label class="check"><input type="checkbox"><span>Flugnaeitur & after-bite</span></label>
+      <label class="check"><input type="checkbox"><span>Plástrar (t.d. Second Skin)</span></label>
+      <label class="check"><input type="checkbox"><span>Lyf + upplýsingar um lyfjagjöf/ofnæmi</span></label>
+      <label class="check"><input type="checkbox"><span>Steinefnatöflur</span></label>
+
+      <h3 class="blocktitle">🔌 Tæki og annað</h3>
+      <label class="check"><input type="checkbox"><span>Sími og hleðslutæki</span></label>
+      <label class="check"><input type="checkbox"><span>Fjöltengi</span></label>
+      <label class="check"><input type="checkbox"><span>Vatnsbrúsi</span></label>
+      <label class="check"><input type="checkbox"><span>Derhúfa</span></label>
+      <label class="check"><input type="checkbox"><span>Sólgleraugu</span></label>
+      <label class="check"><input type="checkbox"><span>Merktur netapoki fyrir óhreint</span></label>
+      <label class="check"><input type="checkbox"><span>Spil, bók o.fl. fyrir frítímann</span></label>
+    </div>
+
+    <div class="note">🍀 <b>Gangi ykkur vel!</b> Við hlökkum til að sjá strákana skína á Gothia Cup 2026. Förum sem einn hópur og sýnum FH á sem besta mögulega hátt.</div>
+  </section>
+
+  <!-- ============ 12. KORT ============ -->
+  <section id="kort">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Staðsetningarkort</h2></div>
+    <p class="lead">Helstu staðir ferðarinnar í Gautaborg. Smelltu á hnappinn til að opna kortið í Google Maps.</p>
+    <div class="card">
+      <div class="pill-row" style="margin-bottom:14px">
+        <span class="pill">🏟 Kviberg</span>
+        <span class="pill">🏟 Bergsjövallen</span>
+        <span class="pill">🏟 Kortedalavallen</span>
+        <span class="pill">🏟 Furulunds IP</span>
+        <span class="pill">🏟 Härlanda</span>
+        <span class="pill">🏟 Gamlestadsvallen</span>
+        <span class="pill">📍 Heden Center</span>
+        <span class="pill">🏟 Ullevi</span>
+        <span class="pill">🎡 Liseberg</span>
+        <span class="pill">🏨 Oxledsskolan</span>
+      </div>
+      <div class="map-wrap">
+        <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Gothia%20Cup%20Heden%20Gothenburg&output=embed"
+          title="Kort af Gautaborg"></iframe>
+      </div>
+      <p style="margin:14px 0 0">
+        <a class="btn" href="https://www.google.com/maps/search/Gothia+Cup+Heden+Gothenburg" target="_blank" rel="noopener">🗺️ Opna kort í Google Maps</a>
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <img src="assets/fh-logo.svg" alt="FH">
+  <p><b>Ferðahandbók · Gothia Cup 2026</b></p>
+  <p>FH · 4. flokkur karla · Gautaborg 12.–19. júlí 2026</p>
+  <a class="backtop" href="#top">↑ Efst á síðu</a>
+</footer>
+
+<script>
+(function(){
+  /* ----- Mobile nav toggle ----- */
+  var toggle = document.getElementById('navToggle');
+  var links  = document.getElementById('navLinks');
+  toggle.addEventListener('click', function(){ links.classList.toggle('open'); });
+  links.addEventListener('click', function(e){
+    if(e.target.tagName === 'A') links.classList.remove('open');
+  });
+
+  /* ----- Scroll-spy active link ----- */
+  var navAnchors = Array.prototype.slice.call(links.querySelectorAll('a'));
+  var map = {};
+  navAnchors.forEach(function(a){ map[a.getAttribute('href').slice(1)] = a; });
+  var sections = navAnchors
+    .map(function(a){ return document.getElementById(a.getAttribute('href').slice(1)); })
+    .filter(Boolean);
+
+  if('IntersectionObserver' in window){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          navAnchors.forEach(function(a){ a.classList.remove('active'); });
+          var act = map[en.target.id];
+          if(act){
+            act.classList.add('active');
+            act.scrollIntoView({block:'nearest', inline:'center'});
+          }
+        }
+      });
+    }, {rootMargin:'-45% 0px -50% 0px', threshold:0});
+    sections.forEach(function(s){ obs.observe(s); });
+  }
+
+  /* ----- Packing list persistence + counter ----- */
+  var KEY = 'fh-gothia-pack-v1';
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('#packlist input[type=checkbox]'));
+  var counter = document.getElementById('packCounter');
+  var saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch(e){}
+
+  function update(){
+    var done = 0;
+    boxes.forEach(function(b,i){
+      var lbl = b.closest('.check');
+      if(b.checked){ done++; lbl.classList.add('done'); }
+      else { lbl.classList.remove('done'); }
+    });
+    counter.textContent = done + ' / ' + boxes.length;
+  }
+  boxes.forEach(function(b,i){
+    if(saved[i]) b.checked = true;
+    b.addEventListener('change', function(){
+      var state = {};
+      boxes.forEach(function(x,j){ if(x.checked) state[j] = 1; });
+      try { localStorage.setItem(KEY, JSON.stringify(state)); } catch(e){}
+      update();
+    });
+  });
+  update();
+
+  window.resetPack = function(){
+    boxes.forEach(function(b){ b.checked = false; });
+    try { localStorage.removeItem(KEY); } catch(e){}
+    update();
+  };
+})();
+</script>
+</body>
+</html>

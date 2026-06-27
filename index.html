@@ -197,6 +197,15 @@
   .teamrow.me .nm{font-weight:800}
   .teamrow.me .cc{color:rgba(255,255,255,.7)}
 
+  /* team card: roster */
+  .subh{margin:0 0 8px;font-family:var(--semi);font-weight:700;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .subh.mt{margin-top:18px}
+  .players{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 28px}
+  @media(max-width:620px){.players{grid-template-columns:1fr}}
+  .players li{display:flex;align-items:center;gap:11px;padding:7px 2px;border-bottom:1px solid var(--line);font-family:var(--semi)}
+  .players .no{flex:none;min-width:28px;height:24px;padding:0 5px;border-radius:6px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--cond);font-weight:700;font-size:.9rem}
+  .players .pn{flex:1;font-weight:600}
+
   .pill-row{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 0}
   .pill{background:#eceef1;border-radius:999px;padding:5px 13px;font-family:var(--semi);font-size:.86rem;font-weight:600}
 
@@ -570,19 +579,35 @@
     <div class="sec-head"><span class="sec-num">4</span><h2>Liðaskipan</h2></div>
     <p class="lead">Lið FH í 4. flokki karla spila í Boys 14 (B14) og Boys 14 B (B14B). Hvert lið spilar þrjá riðlaleiki nema FH 1 sem spilar 4 riðlaleiki. Eftir riðlakeppnina munu efstu liðin færast upp um styrkleika og þau neðstu spila í neðri styrkleika.</p>
 
-    <div class="grid grid-2">
-
       <div class="card">
         <div class="ghead">
           <span class="badge">B14</span>
           <h3>FH 1 · Riðill 10</h3>
           <a class="glink" href="https://results.gothiacup.se/2026/categories/71404710/division/81405824" target="_blank" rel="noopener">Lifandi staða ↗</a>
         </div>
+        <h4 class="subh">Mótherjar í riðli</h4>
         <div class="teamrow me"><span class="flag">🇮🇸</span><span class="nm">FH 1</span><span class="cc">ISL</span></div>
         <div class="teamrow"><span class="flag">🇸🇪</span><span class="nm">Utbynäs SK</span><span class="cc">SWE</span></div>
         <div class="teamrow"><span class="flag">🇸🇪</span><span class="nm">Västerås SK Ungdom 2</span><span class="cc">SWE</span></div>
         <div class="teamrow"><span class="flag">🇲🇼</span><span class="nm">Ascent Soccer</span><span class="cc">MWI</span></div>
         <div class="teamrow"><span class="flag">🇳🇴</span><span class="nm">HSV Fotball 2</span><span class="cc">NOR</span></div>
+        <h4 class="subh mt">⚽ Leikmenn</h4>
+        <ol class="players">
+          <li><span class="no">10</span><span class="pn">Alexander Óli Magnússon</span></li>
+          <li><span class="no">8</span><span class="pn">Benjamín Nói Svavarsson</span></li>
+          <li><span class="no">30</span><span class="pn">Breki Fjalar Valdimarsson</span></li>
+          <li><span class="no">24</span><span class="pn">Fannar Helgi Kristinsson</span></li>
+          <li><span class="no">70</span><span class="pn">Guðmundur Árni Guðrúnarson</span></li>
+          <li><span class="no">1</span><span class="pn">Hákon Leó Mueller</span></li>
+          <li><span class="no">22</span><span class="pn">Jökull Máni Davíðsson</span></li>
+          <li><span class="no">36</span><span class="pn">Jón Mikael Gestsson</span></li>
+          <li><span class="no">12</span><span class="pn">Lárus Flóki Björnsson</span></li>
+          <li><span class="no">18</span><span class="pn">Magnús Páll Eyjólfsson</span></li>
+          <li><span class="no">6</span><span class="pn">Marel Nói Arnarson</span></li>
+          <li><span class="no">78</span><span class="pn">Óli Steinn Jóhannesson</span></li>
+          <li><span class="no">14</span><span class="pn">Úlfar Kári Eðvarðsson</span></li>
+          <li><span class="no">32</span><span class="pn">Víkingur Hrafn Þórhallsson</span></li>
+        </ol>
       </div>
 
       <div class="card">
@@ -591,10 +616,27 @@
           <h3>FH 2 · Riðill 11</h3>
           <a class="glink" href="https://results.gothiacup.se/2026/categories/71404710/division/81405838" target="_blank" rel="noopener">Lifandi staða ↗</a>
         </div>
+        <h4 class="subh">Mótherjar í riðli</h4>
         <div class="teamrow me"><span class="flag">🇮🇸</span><span class="nm">FH 2</span><span class="cc">ISL</span></div>
         <div class="teamrow"><span class="flag">🇸🇪</span><span class="nm">Eskilsminne IF 1</span><span class="cc">SWE</span></div>
         <div class="teamrow"><span class="flag">🇸🇪</span><span class="nm">Surte IS FK</span><span class="cc">SWE</span></div>
         <div class="teamrow"><span class="flag">🇪🇹</span><span class="nm">EDY Sport Enrichment Center</span><span class="cc">ETH</span></div>
+        <h4 class="subh mt">⚽ Leikmenn</h4>
+        <ol class="players">
+          <li><span class="no">18</span><span class="pn">Anton Breki Rebekkuson</span></li>
+          <li><span class="no">46</span><span class="pn">Arnar Emil Antonsson</span></li>
+          <li><span class="no">52</span><span class="pn">Emil Trausti Davíðsson</span></li>
+          <li><span class="no">33</span><span class="pn">Hafsteinn Þór Ágústsson</span></li>
+          <li><span class="no">44</span><span class="pn">Hilmir Örn Emilsson</span></li>
+          <li><span class="no">76</span><span class="pn">Hörður Logi Hrafndal Drífuson</span></li>
+          <li><span class="no">92</span><span class="pn">Lárus Hörður Elmarsson</span></li>
+          <li><span class="no">45</span><span class="pn">Nói Logason</span></li>
+          <li><span class="no">28</span><span class="pn">Olaf Kacper Staszek</span></li>
+          <li><span class="no">1</span><span class="pn">Óliver Harri Siggeirsson</span></li>
+          <li><span class="no">66</span><span class="pn">Sebastian Konopelski</span></li>
+          <li><span class="no">26</span><span class="pn">Tómas Hjaltalín</span></li>
+          <li><span class="no">1</span><span class="pn">Þorsteinn Þór Arnarsson</span></li>
+        </ol>
       </div>
 
       <div class="card">
@@ -603,10 +645,25 @@
           <h3>FH 1 · Riðill 18</h3>
           <a class="glink" href="https://results.gothiacup.se/2026/categories/71404715/division/81406666" target="_blank" rel="noopener">Lifandi staða ↗</a>
         </div>
+        <h4 class="subh">Mótherjar í riðli</h4>
         <div class="teamrow me"><span class="flag">🇮🇸</span><span class="nm">FH 1</span><span class="cc">ISL</span></div>
         <div class="teamrow"><span class="flag">🇸🇪</span><span class="nm">Stenkullen GoIK</span><span class="cc">SWE</span></div>
         <div class="teamrow"><span class="flag">🇸🇪</span><span class="nm">Kallhälls FF Vit</span><span class="cc">SWE</span></div>
         <div class="teamrow"><span class="flag">🇬🇭</span><span class="nm">ProGen FC</span><span class="cc">GHA</span></div>
+        <h4 class="subh mt">⚽ Leikmenn</h4>
+        <ol class="players">
+          <li><span class="no">4</span><span class="pn">Baltasar Darri Freysson</span></li>
+          <li><span class="no">28</span><span class="pn">Dagur Emil Gunnarsson</span></li>
+          <li><span class="no">38</span><span class="pn">Friðrik Brynjar Atlason</span></li>
+          <li><span class="no">38</span><span class="pn">Hrafnkell Daði Árnason</span></li>
+          <li><span class="no">98</span><span class="pn">Jakob Snær Örvarsson</span></li>
+          <li><span class="no">1</span><span class="pn">Jakub Ísak Wosik</span></li>
+          <li><span class="no">2</span><span class="pn">Sigurður Örn Ólafsson</span></li>
+          <li><span class="no">34</span><span class="pn">Torfi Þórsson</span></li>
+          <li><span class="no">42</span><span class="pn">Viktor Orri Ólafsson</span></li>
+          <li><span class="no">16</span><span class="pn">Vilhjálmur Patrick Ragnarsson</span></li>
+          <li><span class="no">20</span><span class="pn">Victor Ingi Egilsson</span></li>
+        </ol>
       </div>
 
       <div class="card">
@@ -615,13 +672,26 @@
           <h3>FH 2 · Riðill 17</h3>
           <a class="glink" href="https://results.gothiacup.se/2026/categories/71404715/division/81406650" target="_blank" rel="noopener">Lifandi staða ↗</a>
         </div>
+        <h4 class="subh">Mótherjar í riðli</h4>
         <div class="teamrow me"><span class="flag">🇮🇸</span><span class="nm">FH 2</span><span class="cc">ISL</span></div>
         <div class="teamrow"><span class="flag">🇸🇪</span><span class="nm">Jonsereds IF</span><span class="cc">SWE</span></div>
         <div class="teamrow"><span class="flag">🇸🇪</span><span class="nm">Skurups AIF</span><span class="cc">SWE</span></div>
         <div class="teamrow"><span class="flag">🇸🇪</span><span class="nm">Årsta FF</span><span class="cc">SWE</span></div>
+        <h4 class="subh mt">⚽ Leikmenn</h4>
+        <ol class="players">
+          <li><span class="no">47</span><span class="pn">Ágúst Malek Hasan</span></li>
+          <li><span class="no">22</span><span class="pn">Ármann Steinar Baldursson</span></li>
+          <li><span class="no">38</span><span class="pn">Benedikt Grönqvist</span></li>
+          <li><span class="no">82</span><span class="pn">Benjamín Steinn Kristinsson</span></li>
+          <li><span class="no">94</span><span class="pn">Birgir Már Tinnuson Björnsson</span></li>
+          <li><span class="no">10</span><span class="pn">Jóel Bessi Finnsson</span></li>
+          <li><span class="no">32</span><span class="pn">Logi Gíslason</span></li>
+          <li><span class="no">16</span><span class="pn">Örvar Hrafn Guðmundsson</span></li>
+          <li><span class="no">58</span><span class="pn">Sindri Marel Sigurðsson</span></li>
+          <li><span class="no">6</span><span class="pn">Stígur Egilsson</span></li>
+          <li><span class="no">56</span><span class="pn">Þorkell Breki Róbertsson</span></li>
+        </ol>
       </div>
-
-    </div>
     <div class="note">Mótherjar í riðlum sóttir af <a href="https://results.gothiacup.se" target="_blank" rel="noopener">results.gothiacup.se</a>. Staða og röð uppfærist á þeirri síðu þegar mótið hefst — smelltu á „Lifandi staða“ við hvern riðil. Riðlaleiki má sjá í <a href="#dagskra">Dagskrá</a>.</div>
   </section>
 

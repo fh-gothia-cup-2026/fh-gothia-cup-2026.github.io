@@ -10,8 +10,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Barlow+Condensed:wght@500;600;700;800&family=Barlow+Semi+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <style>
   :root{
     --ink:#14171b;
@@ -241,12 +239,8 @@
   .tag-imp{background:var(--accent);color:#fff;border-color:var(--accent)}
 
   /* map */
-  #map{height:440px;width:100%;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);z-index:0}
-  .leaflet-container{font-family:var(--semi)}
-  .mk{background:transparent;border:0}
-  .mk span{display:flex;align-items:center;justify-content:center;width:30px;height:30px;background:#fff;border:2px solid var(--accent);border-radius:50%;box-shadow:var(--shadow);font-size:15px;line-height:1}
-  .pill-btn{cursor:pointer;border:1px solid var(--line);background:#eceef1;color:inherit}
-  .pill-btn:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .map-embed{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);line-height:0}
+  .map-embed iframe{width:100%;height:480px;border:0;display:block}
 
   .todo{
     display:inline-block;font-family:var(--semi);font-size:.72rem;font-weight:800;letter-spacing:.05em;
@@ -285,7 +279,7 @@
   @media print{
     :root{--bg:#fff}
     body{background:#fff}
-    .nav,.hero__actions,.nav__toggle,.backtop,#map{display:none !important}
+    .nav,.hero__actions,.nav__toggle,.backtop,.map-embed{display:none !important}
     .hero{background:#fff;color:#000;padding:8px 0 4px}
     .hero::before,.hero::after{display:none}
     .hero__kicker,.hero__sub,.hero__team,.hero h1{color:#000}
@@ -991,12 +985,13 @@
   <!-- ============ 12. KORT ============ -->
   <section id="kort">
     <div class="sec-head"><span class="sec-num">12</span><h2>Staðsetningarkort</h2></div>
-    <p class="lead">Helstu staðir ferðarinnar í Gautaborg. Smelltu á punkt á kortinu — eða stað í listanum hér fyrir neðan — til að sjá nánar.</p>
+    <p class="lead">Helstu staðir ferðarinnar í Gautaborg — leikvangar, gisting og fleira. Smelltu á punkt á kortinu til að sjá nánar.</p>
     <div class="card">
-      <div id="map"></div>
-      <div id="maplegend" class="pill-row" style="margin-top:14px"></div>
+      <div class="map-embed">
+        <iframe src="https://www.google.com/maps/d/embed?mid=1sFaQBYylAd2toy1Ynwymbw14m2RZavw" title="Kort af stöðum í Gautaborg" loading="lazy"></iframe>
+      </div>
       <p style="margin:14px 0 0">
-        <a class="btn" href="https://www.google.com/maps/dir/Heden%2C+G%C3%B6teborg/Ullevi%2C+G%C3%B6teborg/Liseberg%2C+G%C3%B6teborg/Gamlestadsvallen%2C+G%C3%B6teborg/H%C3%A4rlanda+IP%2C+G%C3%B6teborg/Kviberg%2C+G%C3%B6teborg/Kortedala+IP%2C+G%C3%B6teborg/Bergsj%C3%B6vallen%2C+G%C3%B6teborg/Oxledsskolan%2C+S%C3%A4vedalen/Furulunds+IP%2C+Partille" target="_blank" rel="noopener">🗺️ Opna alla staði í Google Maps</a>
+        <a class="btn" href="https://www.google.com/maps/d/view?mid=1sFaQBYylAd2toy1Ynwymbw14m2RZavw" target="_blank" rel="noopener">🗺️ Opna kortið í Google Maps</a>
       </p>
     </div>
   </section>
@@ -1076,55 +1071,6 @@
     try { localStorage.removeItem(KEY); } catch(e){}
     update();
   };
-})();
-</script>
-
-<script>
-/* ----- Staðsetningarkort (Leaflet) ----- */
-(function(){
-  if(typeof L === 'undefined') return;
-  var PLACES = [
-    {n:"Oxledsskolan", note:"Gisting", e:"🛏️", lat:57.7173676, lng:12.0740196},
-    {n:"Heden", note:"Miðstöð mótsins", e:"📍", lat:57.7004341, lng:11.9805827},
-    {n:"Ullevi", note:"Opnunarhátíð", e:"🏟", lat:57.7059197, lng:11.9873276},
-    {n:"Liseberg", note:"Skemmtigarður", e:"🎢", lat:57.6945173, lng:11.9936954},
-    {n:"Kviberg", note:"Leikvangur", e:"⚽", lat:57.7360535, lng:12.0311915},
-    {n:"Bergsjövallen", note:"Leikvangur", e:"⚽", lat:57.7558434, lng:12.0607626},
-    {n:"Kortedalavallen", note:"Leikvangur", e:"⚽", lat:57.7491098, lng:12.0335589},
-    {n:"Furulunds IP", note:"Leikvangur", e:"⚽", lat:57.7220534, lng:12.1310766},
-    {n:"Härlanda", note:"Leikvangur", e:"⚽", lat:57.7184901, lng:12.0210357},
-    {n:"Gamlestadsvallen", note:"Leikvangur", e:"⚽", lat:57.7273513, lng:12.0041784}
-  ];
-  var el = document.getElementById('map');
-  if(!el) return;
-  var map = L.map(el, {scrollWheelZoom:false}).setView([57.72, 12.02], 11);
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom:19, attribution:'© OpenStreetMap'
-  }).addTo(map);
-  var bounds = [], markers = [];
-  PLACES.forEach(function(p){
-    var icon = L.divIcon({className:'mk', html:'<span>'+p.e+'</span>', iconSize:[30,30], iconAnchor:[15,15], popupAnchor:[0,-14]});
-    var m = L.marker([p.lat, p.lng], {icon:icon}).addTo(map)
-      .bindPopup('<b>'+p.n+'</b><br>'+p.note)
-      .bindTooltip(p.n, {direction:'top', offset:[0,-12]});
-    markers.push(m); bounds.push([p.lat, p.lng]);
-  });
-  map.fitBounds(bounds, {padding:[40,40]});
-  var leg = document.getElementById('maplegend');
-  if(leg){
-    PLACES.forEach(function(p, i){
-      var b = document.createElement('button');
-      b.className = 'pill pill-btn';
-      b.innerHTML = p.e + ' ' + p.n;
-      b.addEventListener('click', function(){
-        map.setView([p.lat, p.lng], 14);
-        markers[i].openPopup();
-        el.scrollIntoView({behavior:'smooth', block:'center'});
-      });
-      leg.appendChild(b);
-    });
-  }
-  setTimeout(function(){ map.invalidateSize(); }, 200);
 })();
 </script>
 </body>

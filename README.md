@@ -57,6 +57,11 @@ Mundu að `assets/`-mappan (FH-merkið) þarf alltaf að fylgja með.
 - „Prenta / Vista sem PDF“ hnappur með sérstöku prentútliti.
 - Pökkunarlistinn man hökin (geymt í vafranum, `localStorage`).
 - Hannað fyrir síma fyrst (foreldrar skoða mest í síma).
+- **Staðsetningarkortið (kafli 12)** er Google „My Maps“ kort sem er fellt inn (embed).
+  Til að breyta pinnum: opnaðu kortið í Google My Maps og breyttu þar — síðan uppfærist
+  sjálfkrafa (ekki þarf að breyta `index.html`). `assets/gothia-stadir.kml` er afrit af
+  pinnunum (réttar staðsetningar) — hægt að flytja það inn í nýtt Google My Maps á öðrum
+  aðgangi til að endurnýta kortið. Uppfærðu `mid=` í embed-slóðinni í `index.html` ef nýtt kort er búið til.
 
 ## TODO — fylla inn í `index.html` þegar upplýsingar liggja fyrir
 

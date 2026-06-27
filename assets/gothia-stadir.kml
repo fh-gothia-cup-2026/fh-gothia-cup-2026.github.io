@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>FH · Gothia Cup 2026 — Staðir</name>
+    <description>Helstu staðir ferðarinnar í Gautaborg, júlí 2026.</description>
+
+    <Folder>
+      <name>Leikvangar</name>
+      <Placemark>
+        <name>Kviberg</name>
+        <description>Leikvangur</description>
+        <Point><coordinates>12.0311915,57.7360535,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>Bergsjövallen</name>
+        <description>Leikvangur</description>
+        <Point><coordinates>12.0607626,57.7558434,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>Kortedalavallen</name>
+        <description>Leikvangur</description>
+        <Point><coordinates>12.0335589,57.7491098,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>Furulunds IP</name>
+        <description>Leikvangur</description>
+        <Point><coordinates>12.1310766,57.7220534,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>Härlanda</name>
+        <description>Leikvangur</description>
+        <Point><coordinates>12.0210357,57.7184901,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>Gamlestadsvallen</name>
+        <description>Leikvangur</description>
+        <Point><coordinates>12.0041784,57.7273513,0</coordinates></Point>
+      </Placemark>
+    </Folder>
+
+    <Folder>
+      <name>Aðrir staðir</name>
+      <Placemark>
+        <name>Oxledsskolan (gisting)</name>
+        <description>Gisting — strákarnir gista hér.</description>
+        <Point><coordinates>12.0740196,57.7173676,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>Heden</name>
+        <description>Miðstöð mótsins — upplýsingaborð, Food Court og Gothia Store.</description>
+        <Point><coordinates>11.9805827,57.7004341,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>Ullevi</name>
+        <description>Opnunarhátíð 13. júlí kl. 20:00.</description>
+        <Point><coordinates>11.9873276,57.7059197,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>Liseberg</name>
+        <description>Skemmtigarður — dagpassi innifalinn.</description>
+        <Point><coordinates>11.9936954,57.6945173,0</coordinates></Point>
+      </Placemark>
+    </Folder>
+
+  </Document>
+</kml>

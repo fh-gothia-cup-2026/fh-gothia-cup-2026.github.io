@@ -10,6 +10,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Barlow+Condensed:wght@500;600;700;800&family=Barlow+Semi+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <style>
   :root{
     --ink:#14171b;
@@ -239,8 +241,12 @@
   .tag-imp{background:var(--accent);color:#fff;border-color:var(--accent)}
 
   /* map */
-  .map-wrap{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);line-height:0}
-  .map-wrap iframe{width:100%;height:380px;border:0}
+  #map{height:440px;width:100%;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);z-index:0}
+  .leaflet-container{font-family:var(--semi)}
+  .mk{background:transparent;border:0}
+  .mk span{display:flex;align-items:center;justify-content:center;width:30px;height:30px;background:#fff;border:2px solid var(--accent);border-radius:50%;box-shadow:var(--shadow);font-size:15px;line-height:1}
+  .pill-btn{cursor:pointer;border:1px solid var(--line);background:#eceef1;color:inherit}
+  .pill-btn:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
 
   .todo{
     display:inline-block;font-family:var(--semi);font-size:.72rem;font-weight:800;letter-spacing:.05em;
@@ -279,7 +285,7 @@
   @media print{
     :root{--bg:#fff}
     body{background:#fff}
-    .nav,.hero__actions,.nav__toggle,.backtop,.map-wrap iframe{display:none !important}
+    .nav,.hero__actions,.nav__toggle,.backtop,#map{display:none !important}
     .hero{background:#fff;color:#000;padding:8px 0 4px}
     .hero::before,.hero::after{display:none}
     .hero__kicker,.hero__sub,.hero__team,.hero h1{color:#000}
@@ -390,6 +396,7 @@
       <div class="card info-card">
         <h3><span class="ic">📘</span> Facebook</h3>
         <p>Hópurinn „FH GothiaCup 2026 kk“.</p>
+        <div class="applinks"><a href="https://www.facebook.com/groups/3508042832694471" target="_blank" rel="noopener">📘 Ganga í hópinn</a></div>
       </div>
       <div class="card info-card">
         <h3><span class="ic">🚌</span> Samgöngur</h3>
@@ -864,7 +871,7 @@
       <p style="color:var(--ink-soft)">Miðstöð mótsins er í <b>Heden Center</b> við miðbæinn. Þar er upplýsingaborðið og höfuðstöðvar mótsins í gegnum vikuna. Heden er miðsvæðis, stutt rölt frá Ullevi (þar sem opnunarhátíðin fer fram) og aðalgötu borgarinnar, Avenyn. Á svæðinu er einnig Food Court og Gothia Store þar sem hægt er að kaupa íþróttaföt og opinbera minjagripi mótsins.</p>
     </div>
 
-    <div class="card info-card"><h3><span class="ic">📺</span> Leikir sýndir beint</h3><p>Hægt er að horfa á streymi frá flestum leikjum og kaupa bæði staka leiki og pass sem gildir fyrir allt mótið.</p></div>
+    <div class="card info-card"><h3><span class="ic">📺</span> Leikir sýndir beint</h3><p>Hægt er að horfa á streymi frá flestum leikjum og kaupa bæði staka leiki og passa sem gildir fyrir allt mótið.</p><div class="applinks"><a href="https://gothiacup.se/en/play" target="_blank" rel="noopener">▶️ Gothia Play — horfa beint</a></div></div>
 
     <div class="card">
       <h3 class="blocktitle" style="margin-top:0">🏥 Sjúkraaðstaða, lyf og ofnæmi</h3>
@@ -984,27 +991,12 @@
   <!-- ============ 12. KORT ============ -->
   <section id="kort">
     <div class="sec-head"><span class="sec-num">12</span><h2>Staðsetningarkort</h2></div>
-    <p class="lead">Helstu staðir ferðarinnar í Gautaborg. Smelltu á hnappinn til að opna kortið í Google Maps.</p>
+    <p class="lead">Helstu staðir ferðarinnar í Gautaborg. Smelltu á punkt á kortinu — eða stað í listanum hér fyrir neðan — til að sjá nánar.</p>
     <div class="card">
-      <div class="pill-row" style="margin-bottom:14px">
-        <span class="pill">🏟 Kviberg</span>
-        <span class="pill">🏟 Bergsjövallen</span>
-        <span class="pill">🏟 Kortedalavallen</span>
-        <span class="pill">🏟 Furulunds IP</span>
-        <span class="pill">🏟 Härlanda</span>
-        <span class="pill">🏟 Gamlestadsvallen</span>
-        <span class="pill">📍 Heden Center</span>
-        <span class="pill">🏟 Ullevi</span>
-        <span class="pill">🎡 Liseberg</span>
-        <span class="pill">🏨 Oxledsskolan</span>
-      </div>
-      <div class="map-wrap">
-        <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-          src="https://www.google.com/maps?q=Gothia%20Cup%20Heden%20Gothenburg&output=embed"
-          title="Kort af Gautaborg"></iframe>
-      </div>
+      <div id="map"></div>
+      <div id="maplegend" class="pill-row" style="margin-top:14px"></div>
       <p style="margin:14px 0 0">
-        <a class="btn" href="https://www.google.com/maps/search/Gothia+Cup+Heden+Gothenburg" target="_blank" rel="noopener">🗺️ Opna kort í Google Maps</a>
+        <a class="btn" href="https://www.google.com/maps/search/Gothia+Cup+Gothenburg" target="_blank" rel="noopener">🗺️ Opna í Google Maps</a>
       </p>
     </div>
   </section>
@@ -1084,6 +1076,55 @@
     try { localStorage.removeItem(KEY); } catch(e){}
     update();
   };
+})();
+</script>
+
+<script>
+/* ----- Staðsetningarkort (Leaflet) ----- */
+(function(){
+  if(typeof L === 'undefined') return;
+  var PLACES = [
+    {n:"Oxledsskolan", note:"Gisting", e:"🏫", lat:57.7173676, lng:12.0740196},
+    {n:"Heden", note:"Miðstöð mótsins", e:"📍", lat:57.7004341, lng:11.9805827},
+    {n:"Ullevi", note:"Opnunarhátíð", e:"🏟", lat:57.7059197, lng:11.9873276},
+    {n:"Liseberg", note:"Skemmtigarður", e:"🎡", lat:57.6945173, lng:11.9936954},
+    {n:"Kviberg", note:"Leikvangur", e:"⚽", lat:57.7360535, lng:12.0311915},
+    {n:"Bergsjövallen", note:"Leikvangur", e:"⚽", lat:57.7558434, lng:12.0607626},
+    {n:"Kortedalavallen", note:"Leikvangur", e:"⚽", lat:57.7491098, lng:12.0335589},
+    {n:"Furulunds IP", note:"Leikvangur", e:"⚽", lat:57.7220534, lng:12.1310766},
+    {n:"Härlanda", note:"Leikvangur", e:"⚽", lat:57.7184901, lng:12.0210357},
+    {n:"Gamlestadsvallen", note:"Leikvangur", e:"⚽", lat:57.7273513, lng:12.0041784}
+  ];
+  var el = document.getElementById('map');
+  if(!el) return;
+  var map = L.map(el, {scrollWheelZoom:false}).setView([57.72, 12.02], 11);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom:19, attribution:'© OpenStreetMap'
+  }).addTo(map);
+  var bounds = [], markers = [];
+  PLACES.forEach(function(p){
+    var icon = L.divIcon({className:'mk', html:'<span>'+p.e+'</span>', iconSize:[30,30], iconAnchor:[15,15], popupAnchor:[0,-14]});
+    var m = L.marker([p.lat, p.lng], {icon:icon}).addTo(map)
+      .bindPopup('<b>'+p.n+'</b><br>'+p.note)
+      .bindTooltip(p.n, {direction:'top', offset:[0,-12]});
+    markers.push(m); bounds.push([p.lat, p.lng]);
+  });
+  map.fitBounds(bounds, {padding:[40,40]});
+  var leg = document.getElementById('maplegend');
+  if(leg){
+    PLACES.forEach(function(p, i){
+      var b = document.createElement('button');
+      b.className = 'pill pill-btn';
+      b.innerHTML = p.e + ' ' + p.n;
+      b.addEventListener('click', function(){
+        map.setView([p.lat, p.lng], 14);
+        markers[i].openPopup();
+        el.scrollIntoView({behavior:'smooth', block:'center'});
+      });
+      leg.appendChild(b);
+    });
+  }
+  setTimeout(function(){ map.invalidateSize(); }, 200);
 })();
 </script>
 </body>

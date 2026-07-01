@@ -67,8 +67,7 @@ Mundu að `assets/`-mappan (FH-merkið) þarf alltaf að fylgja með.
 
 Leitaðu að `VANTAR` / `class="todo"` í skránni:
 
-1. **Hegðunarsáttmáli** (kafli 9) — setja útivistartíma / hvenær skólinn lokar.
-2. **Úrslitakeppni** (kafli 3) — leikir fimmtud.–laugard. birtast þegar staða úr riðlum liggur fyrir.
+1. **Úrslitakeppni** (kafli 3) — leikir fimmtud.–laugard. birtast þegar staða úr riðlum liggur fyrir.
 
 Riðlarnir í kafla 4 (Liðaskipan) eru sóttir af results.gothiacup.se. Hver riðill hefur
 „Lifandi staða“ tengil á opinberu mótssíðuna þar sem röð og úrslit uppfærast meðan á mótinu stendur.

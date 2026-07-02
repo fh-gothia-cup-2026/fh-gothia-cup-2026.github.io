@@ -250,6 +250,15 @@
 
   .badge-card{display:inline-flex;align-items:center;gap:8px;border-radius:10px;padding:9px 13px;font-family:var(--semi);font-weight:600;margin:4px 8px 4px 0;background:#f3f4f6;border:1px solid var(--line)}
 
+  /* samkomulag (player agreement) */
+  .pact{list-style:none;margin:0 0 6px;padding:0}
+  .pact li{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid var(--line);break-inside:avoid}
+  .pact li:last-child{border-bottom:none}
+  .pact .pn{flex:none;width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--cond);font-weight:800;font-size:1.15rem}
+  .pact .pt{display:block;font-family:var(--cond);font-weight:800;text-transform:uppercase;letter-spacing:.02em;font-size:1.08rem;margin-bottom:1px}
+  .pact .pd{color:var(--ink-soft);font-size:.97rem}
+  .pact-tag{text-align:center;font-family:var(--cond);font-weight:700;font-style:italic;text-transform:uppercase;letter-spacing:.03em;font-size:1.3rem;margin:18px 0 0}
+
   footer{background:#0a0c0f;color:#aeb4bc;text-align:center;padding:36px 20px}
   footer img{width:42px;margin-bottom:10px;filter:invert(1) brightness(2);opacity:.9}
   footer p{margin:4px 0;font-size:.92rem}
@@ -340,7 +349,7 @@
       <a href="#gisting">Gisting</a>
       <a href="#matur">Matur</a>
       <a href="#lidstjorar">Liðstjórar</a>
-      <a href="#reglur">Reglur</a>
+      <a href="#reglur">Samkomulag</a>
       <a href="#gagnlegt">Gagnlegt</a>
       <a href="#pokkun">Pökkun</a>
       <a href="#kort">Kort</a>
@@ -363,7 +372,7 @@
         <a href="#gisting"><span class="n">6</span> Gisting</a>
         <a href="#matur"><span class="n">7</span> Matur</a>
         <a href="#lidstjorar"><span class="n">8</span> Liðstjórar og foreldrar</a>
-        <a href="#reglur"><span class="n">9</span> Reglur leikmanna</a>
+        <a href="#reglur"><span class="n">9</span> Samkomulag leikmanna</a>
         <a href="#gagnlegt"><span class="n">10</span> Gagnlegar upplýsingar</a>
         <a href="#pokkun"><span class="n">11</span> Pökkunarlisti</a>
         <a href="#kort"><span class="n">12</span> Staðsetningarkort</a>
@@ -548,7 +557,6 @@
           <tr><td class="t">12:50</td><td>Västerås SK Ungdom 2 – <span class="fh">FH 1</span></td><td class="v">Bergsjövallen 1</td></tr>
           <tr><td class="t">13:50</td><td><span class="fh">FH 2</span> – EDY Sport Enrichment Center</td><td class="v">Furulunds IP</td></tr>
         </table>
-        <div class="event">🎉 Leaders party fyrir fararstjóra liða kl. 19:00–24:00. Foreldrar standa vaktina með liðunum á meðan.</div>
       </div>
 
       <div class="day">
@@ -779,53 +787,26 @@
 
   <!-- ============ 9. REGLUR ============ -->
   <section id="reglur">
-    <div class="sec-head"><span class="sec-num">9</span><h2>Reglur leikmanna</h2></div>
-    <p class="lead">4. flokki FH á Gothia Cup 2026 ber að:</p>
+    <div class="sec-head"><span class="sec-num">9</span><h2>Samkomulag leikmanna</h2></div>
+    <p class="lead">Ég geri mér grein fyrir að ég er fulltrúi FH, liðsins míns, fjölskyldu minnar og sjálfs míns á Gothia Cup. Með undirskrift minni samþykki ég að:</p>
     <div class="card">
-      <ul class="clean">
-        <li>Koma fram af kurteisi við alla sem þeir eiga samskipti við.</li>
-        <li>Hafa ávallt gleði og jákvæðni í huga.</li>
-        <li>Bera virðingu fyrir og hlýða fyrirmælum þjálfara og liðstjóra sem og starfsmönnum mótsins.</li>
-        <li>Fara út sem hópur og vera meðvitaðir um að öllum líði vel, innan vallar sem utan.</li>
-        <li>Leggja sig fram við að gera ferðina að skemmtilegri upplifun og skapa góðar minningar.</li>
-        <li>Hafa auga með hver öðrum — vera aldrei færri en þrír saman á ferð.</li>
-        <li>Fara í sturtu við lok keppni hvers dags.</li>
-        <li>Mæta á réttum tíma og fylgja öllum reglum sem þjálfarar og liðstjórar setja.</li>
-        <li>Virða útivistartíma sem liðstjórar setja.</li>
-        <li>Halda ekki vöku fyrir öðrum eftir að svefntími er kominn.</li>
-        <li>Reyna að horfa á leiki annarra liða í flokknum ef tækifæri gefst til.</li>
-        <li>Vera FH til sóma innan vallar sem utan.</li>
-        <li>Vera meðvitaðir um þau verðmæti sem þeir taka með sér út.</li>
-        <li>Hita upp í einum hóp fyrir leiki án undantekninga.</li>
-        <li>Gæta hófs í nammiáti — ekki borða nammi þegar leikir eru.</li>
-        <li>Það er stranglega bannað að fara af gististaðnum án leyfis liðstjóra.</li>
-      </ul>
-      <p style="color:var(--ink-soft)">Ef iðkandi fer verulega á skjön við reglur mótsins/liðstjóra eða almennar samskiptareglur er tekið á því af liðstjórum og þjálfurum.</p>
-      <p style="color:var(--ink-soft)">Við ítrekum að foreldrar hafa ekki leyfi til að taka syni sína úr hópnum né koma með sérstakan mat handa þeim. Það er þó í boði, í samráði við liðstjórn, að færa öllum einhvern glaðning.</p>
+      <ol class="pact">
+        <li><span class="pn">1</span><div><span class="pt">Koma fram af virðingu</span><span class="pd">Ég kem fram af virðingu við liðsfélaga, andstæðinga, dómara, fararstjóra, starfsfólk mótsins og aðra þátttakendur.</span></div></li>
+        <li><span class="pn">2</span><div><span class="pt">Fylgja fyrirmælum</span><span class="pd">Ég fylgi fyrirmælum þjálfara og fararstjóra á meðan ferðinni stendur.</span></div></li>
+        <li><span class="pn">3</span><div><span class="pt">Jákvæður liðsandi</span><span class="pd">Ég legg mitt af mörkum til að skapa jákvæðan liðsanda og góðan hóp.</span></div></li>
+        <li><span class="pn">4</span><div><span class="pt">Ganga vel um</span><span class="pd">Ég geng vel um gistingu, búnað, rútur, leiksvæði og annað sem við notum.</span></div></li>
+        <li><span class="pn">5</span><div><span class="pt">Aldrei ferðast einn</span><span class="pd">Ég ferðast aldrei einn. Ég skal ávallt vera með að minnsta kosti tveimur öðrum úr hópnum nema annað hafi verið samþykkt af þjálfara eða fararstjóra.</span></div></li>
+        <li><span class="pn">6</span><div><span class="pt">Mæta á réttum tíma</span><span class="pd">Ég mæti á réttum tíma á fundi, máltíðir, æfingar og leiki.</span></div></li>
+        <li><span class="pn">7</span><div><span class="pt">Borða vel og hvílast vel</span><span class="pd">Ég borða vel, drekk nægan vökva og hvílist vel svo ég geti lagt mitt af mörkum fyrir liðið.</span></div></li>
+        <li><span class="pn">8</span><div><span class="pt">Forðast neikvæða hegðun</span><span class="pd">Ég forðast hegðun sem getur skaðað mig, aðra eða orðspor FH.</span></div></li>
+        <li><span class="pn">9</span><div><span class="pt">Umgangur á samfélagsmiðlum</span><span class="pd">Ég sýni jákvætt viðmót á samfélagsmiðlum og birti ekki efni sem getur sært, niðurlægt eða komið illa út fyrir einstaklinga eða félagið.</span></div></li>
+        <li><span class="pn">10</span><div><span class="pt">Stoltur fulltrúi FH</span><span class="pd">Ég man að ég er hluti af liði þar sem allir skipta máli og hegða mér þannig að ég geti verið stoltur af framkomu minni þegar heim er komið.</span></div></li>
+      </ol>
+      <p style="color:var(--ink-soft);margin-bottom:0">Ég skil að ef ég fer ekki eftir þessum reglum geta þjálfarar og fararstjórar gripið til viðeigandi ráðstafana og haft samband við mig ef þörf krefur.</p>
+      <p class="pact-tag">Við erum risar með svarthvít hjörtu ♡</p>
     </div>
 
-    <h3 class="blocktitle">⚖️ Hegðunarsáttmáli · Gothia Cup 2026</h3>
-    <p class="lead">Í keppnisferðalagi á vegum FH skal leikmaður:</p>
-    <div class="card">
-      <ul class="none">
-        <li><b>Fulltrúi</b> — vera verðugur fulltrúi FH hvert sem ég fer.</li>
-        <li><b>Framlag</b> — koma vel undirbúinn til leiks og leggja mig allan fram til þess að liðið mitt nái árangri.</li>
-        <li><b>Hvatning</b> — hvetja liðsfélaga mína áfram og gefast aldrei upp!</li>
-        <li><b>Virðing</b> — koma fram af virðingu við mótherja og dómara.</li>
-        <li><b>Liðsandi</b> — leggja mig fram við að efla liðsanda; allir eru jafnir og enginn skilinn útundan.</li>
-        <li><b>Hófsemi</b> — fagna af hófsemi við sigur og sýna stillingu við tap.</li>
-        <li><b>Fyrirmæli</b> — fara eftir fyrirmælum þjálfara og liðstjóra.</li>
-        <li><b>Útivistartími</b> — vera kominn í skólann eigi síðar en kl. 21:30 (skólinn lokar kl. 22:00) og vera aldrei færri en 3 strákar saman.</li>
-        <li><b>Umgengni</b> — ganga vel um skólastofuna, matsal og keppnisvelli.</li>
-        <li><b>Tillitssemi</b> — raska ekki svefnró annarra.</li>
-        <li><b>Stundvísi</b> — mæta stundvíslega í matartíma og í leiki.</li>
-        <li><b>Ábyrgð</b> — taka ábyrgð á sínum útbúnaði, fatnaði, síma og greiðslukortum.</li>
-        <li><b>Snjallsímar</b> — gæta varúðar í símanotkun; ekki taka myndir né senda nema allir séu samþykkir.</li>
-        <li><b>Kurteisi</b> — vera kurteis við starfsmenn á svæðinu og liðstjóra.</li>
-        <li><b>Vímuefni</b> — notkun hvers konar vímuefna er óheimil.</li>
-        <li><b>Life360</b> — vera með Life360 appið opið á hverjum tíma.</li>
-      </ul>
-    </div>
+    <div class="note">Við ítrekum að foreldrar hafa ekki leyfi til að taka syni sína úr hópnum né koma með sérstakan mat handa þeim. Það er þó í boði, í samráði við liðstjórn, að færa öllum einhvern glaðning.</div>
 
     <h3 class="blocktitle">Viðurlög við brotum</h3>
     <div class="card">
@@ -834,7 +815,7 @@
         <span class="badge-card badge-yellow">🟡 <b>Gult spjald</b> — fyrsta brot: hringt í foreldra og leikmaður situr á bekknum í næsta leik.</span>
         <span class="badge-card badge-red">🔴 <b>Rautt spjald</b> — annað brot: leikmaður er sendur heim á kostnað foreldra.</span>
       </div>
-      <p style="color:var(--ink-soft)">Foreldrar skulu fara yfir þennan hegðunarsáttmála með leikmönnum. Höfum leikgleði og virðingu fyrir öllum þátttakendum leiksins að leiðarljósi þegar við komum fram fyrir hönd FH.</p>
+      <p style="color:var(--ink-soft)">Foreldrar skulu fara yfir þetta samkomulag með leikmönnum. Höfum leikgleði og virðingu fyrir öllum þátttakendum leiksins að leiðarljósi þegar við komum fram fyrir hönd FH.</p>
     </div>
   </section>
 
@@ -905,16 +886,15 @@
         <li>Símar eru leyfðir en liðstjórar stýra notkun á kvöldin.</li>
         <li>Símar eru geymdir á meðan á leikjum stendur, annars á ábyrgð strákanna.</li>
         <li>STRANGLEGA BANNAÐ að vera með síma í matsalnum eða í kringum leikina.</li>
-        <li>Foreldrar kenna strákunum að slökkva á talhólfi, data roaming o.s.frv., nýta Wi-Fi og setja upp eSIM svo hægt sé að ná í þá utan Wi-Fi ef þörf krefur.</li>
       </ul>
     </div>
 
     <div class="card">
       <h3 class="blocktitle" style="margin-top:0">📌 Nokkur mikilvæg atriði</h3>
       <ul class="clean">
+        <li><b>Skila vegabréfi, leyfisbréfi og sjúkratryggingakorti 9. júlí kl. 17:00–17:30 í Kaplakrika.</b> Afhendum bakpoka, peysu og varatreyju þennan dag.</li>
         <li>WhatsApp er notað fyrir skilaboð til leikmanna ásamt Life360 fyrir staðsetningu.</li>
         <li>Nauðsynlegt er að strákarnir hafi 4G net á meðan við erum úti.</li>
-        <li>eSIM fyrir Svíþjóð: <a href="https://icelandair.breezesim.com" target="_blank" rel="noopener">icelandair.breezesim.com</a></li>
         <li>Allir strákarnir taka mynd af vegabréfi, sjúkratryggingakorti og leyfisbréfi.</li>
         <li>Foreldrar fylla út og kvitta á leyfisbréf.</li>
         <li>Liðstjórar geyma vegabréfin, sjúkratryggingakortin og leyfisbréfin á meðan á mótinu stendur.</li>
@@ -977,7 +957,6 @@
 
       <h3 class="blocktitle">🔌 Tæki og annað</h3>
       <label class="check"><input type="checkbox"><span>Sími og hleðslutæki</span></label>
-      <label class="check"><input type="checkbox"><span>Fjöltengi</span></label>
       <label class="check"><input type="checkbox"><span>Vatnsbrúsi</span></label>
       <label class="check"><input type="checkbox"><span>Derhúfa</span></label>
       <label class="check"><input type="checkbox"><span>Sólgleraugu</span></label>
